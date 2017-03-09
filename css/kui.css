@@ -1,0 +1,427 @@
+/*common*/
+.k-absolute-menu{
+  position: absolute;
+  margin-top: 2px;
+  min-width: 100%;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  z-index: 9999;
+}
+.k-border-box{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*ButtonGroup*/
+.k-button-group{
+  font-size: 0px;
+  display: inline-table;
+  position: relative;
+}
+.k-button-group-radius{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.k-button-group .k-button{
+  border-radius: 0;
+  margin-left: -1px;
+}
+.k-button-group .k-button:first-child{
+  margin-left: 0;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.k-button-group .k-button:last-child{
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.k-button-group .k-button:hover{
+  z-index: 99;
+}
+.k-button-group .k-button-circle{
+  padding: auto;
+}
+.k-button-group .k-dropdown{
+  margin-left: -1px;
+}
+.k-button-group .k-dropdown-menu-item{
+  font-size: initial;
+}
+.k-button-group .k-dropdown:first-child{
+  margin-left: 0;
+}
+.k-button-group .k-dropdown{
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.k-button-group .k-dropdown{
+  border-radius: 0;
+}
+.k-button-group .k-dropdown:first-child{
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.k-button-group .k-dropdown:last-child{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+/*DropDown*/
+.k-dropdown{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.k-dropdown i:last-child{
+  margin-left: 10px;
+  transition: transform .15s ease-out;
+}
+.k-dropdown i:first-child{
+  margin-left: 0;
+  margin-right: 6px;
+}
+.k-dropdown-menu{
+  margin: 1px 0 0;
+  padding: 5px 0 15px 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
+  color: #666;
+}
+.k-dropdown-menu-item{
+  list-style: none;
+  position: relative;
+  padding: 6px 10px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  transition: background-color .15s ease-out;
+}
+.k-dropdown-menu-item-icon{
+  padding-left: 2em;
+}
+.k-dropdown-menu-item-i{
+  position: absolute;
+  left: 10px;
+  height: 1em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.k-dropdown-menu-item:hover{
+  background-color: rgba(0, 0, 0, .1);
+}
+.k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{
+  height: auto;
+  transition: all .2s ease;
+}
+.k-dropdown-menu-enter, .k-dropdown-menu-leave-active{
+  height: 0;
+  padding: 0;
+  transform: rotateX(30deg);
+  opacity: 0;
+}
+/*Button*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+.k-button{
+  position: relative;
+  display: inline-block;
+  outline: none;
+  font-weight: 400;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1;
+  /*line-height: 1.5;*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;
+  transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;
+}
+.k-button-radius{
+  border-radius: 4px;
+}
+.k-button i:first-child{
+  margin-right: 6px;
+}
+.k-button i:last-child{
+  margin-right: 0px;
+}
+.k-button-mini{
+  padding: 2px 4px;
+}
+.k-button-small{
+  padding: 4px 8px;
+}
+.k-button-normal{
+  padding: 6px 14px;
+}
+.k-button-large{
+  padding: 8px 16px;
+}
+.k-button-default{
+  background: #fff;
+  color: #666;
+  border-color: #ccc;
+}
+.k-button-default:hover{
+  border-color: #20a0ff;
+  color: #20a0ff;
+}
+.k-button-default:active{
+  border-color: #3879D9;
+  color: #3879D9;
+}
+.k-button-ghost{
+  color: #666;
+  background: none;
+  border-color: #ccc;
+}
+.k-button-ghost:hover{
+  border-color: #20a0ff;
+  color: #20a0ff;
+}
+.k-button-ghost:active{
+  border-color: #3879D9;
+  color: #3879D9;
+}
+.k-button-dashed{
+  border: 1px dashed #ccc;
+  background: #fff;
+  color: #666;
+}
+.k-button-dashed:hover{
+  border-color: #20a0ff;
+  color: #20a0ff;
+}
+.k-button-dashed:active{
+  border-color: #3879D9;
+  color: #3879D9;
+}
+.k-button-text{
+  background: transparent;
+  color: #20a0ff;
+  border-color: transparent;
+}
+.k-button-text:hover{
+  color: #4db3ff;
+}
+.k-button-text:active{
+  color: #3879D9;
+}
+.k-button-primary{
+  background: #20a0ff;
+  color: #fff;
+  border-color: #20a0ff;
+}
+.k-button-primary:hover{
+  border-color: #4db3ff;
+  background: #4db3ff;
+  color: #fff;
+}
+.k-button-primary:active{
+  border-color: #3879D9;
+  background: #3879D9;
+  color: #fff;
+}
+.k-button-success {
+  border-color: #13ce66;
+  background: #13ce66;
+  color: #fff;
+}
+.k-button-success:hover {
+  background: #42d885;
+  border-color: #42d885;
+}
+.k-button-success:active {
+  background: #42AE77;
+  border-color: #42AE77;
+}
+.k-button-warning {
+  border-color: #f7ba2a;
+  background: #f7ba2a;
+  color: #fff;
+}
+.k-button-warning:hover {
+  background: #f9c885;
+  border-color: #f9c885;
+}
+.k-button-warning:active {
+  background: #FF9900;
+  border-color: #FF9900;
+}
+.k-button-danger {
+  border-color: #ff4949;
+  background: #ff4949;
+  color: #fff;
+}
+.k-button-danger:hover {
+  background: #ff6d6d;
+  border-color: #ff6d6d;
+}
+.k-button-danger:active {
+  background: #cc3333;
+  border-color: #cc3333;
+}
+.k-button-info {
+  border-color: #50bfff;
+  background: #50bfff;
+  color: #fff;
+}
+.k-button-info:hover {
+  background: #73ccff;
+  border-color: #73ccff;
+}
+.k-button-info:active {
+  background: #20a0ff;
+  border-color: #20a0ff;
+}
+.k-button-disable{
+  cursor: not-allowed;
+  color: #aaa;
+  border-color: #d3dce6;
+  background: #eee;
+}
+.k-button-disable:hover{
+  cursor: not-allowed;
+  color: #aaa;
+  border-color: #d3dce6;
+  background: #eee;
+}
+.k-button-disable:active{
+  cursor: not-allowed;
+  color: #aaa;
+  border-color: #d3dce6;
+  background: #eee;
+}
+.k-button-circle{
+  border-radius: 50%;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+}
+
+/*notification*/
+.k-notification{
+  position: relative;
+  font-size: 14px;
+  margin-top: 16px;
+  width: 360px;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid #c0ccda;
+  right: 4px;
+  padding: 12px 20px 12px 10px;
+  color: #666;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.k-notification-wrap{
+  position: fixed;
+  right: 0;
+  top: 60px;
+}
+.k-notification-default {
+  background: #fff;
+  color: #888;
+  border: 1px solid #d9d9d9;
+}
+.k-notification p{
+  color: inherit;
+}
+.k-notification-title{
+  color: inherit;
+}
+.k-notification-left{
+  width: 72px;
+  margin-top: 16px;
+  height: 100%;
+  text-align: center;
+}
+.k-notification-left i{
+  font-size: 32px;
+  display: inline-block;
+}
+.k-notification-right{
+  width: 248px;
+}
+.k-notification-right h3{
+  padding-top: 6px;
+  margin: 0;
+}
+.k-notification-right i{
+  float: right;
+  cursor: pointer;
+}
+.k-notification-right p{
+  margin: 0;
+  padding: 10px 0;
+}
+.k-notification-left, .k-notification-right{
+  float: left;
+}
+.k-notification-success {
+  background: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+.k-notification-info {
+  color: #31708f;
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
+}
+.k-notification-error {
+  color: #a94442;
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+}
+.k-notification-warning {
+  color: #8a6d3b;
+  background: #fcf8e3;
+  border:1px solid #faebcc;
+}
+.k-notification-fade-enter-active{
+  transition: all .3s ease;
+}
+.k-notification-fade-leave-active{
+  transition: all .35s ease-out;
+}
+.k-notification-fade-enter{
+  opacity: 0;
+  height: 0;
+  right: -360px;
+}
+.k-notification-fade-leave-active{
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  right: -360px;
+}
