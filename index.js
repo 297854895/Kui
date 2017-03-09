@@ -6,6 +6,7 @@ import Button from './src/components/Button/Button.vue';
 import ButtonGroup from './src/components/ButtonGroup/ButtonGroup.vue';
 import DropDown from './src/components/DropDown/DropDown.vue';
 import DropDownItem from './src/components/DropDown/DropDownItem.vue';
+import Switch from './src/components/Switch/Switch.vue';
 
 import MainBus from './src/components/MainBus/index.js';
 import Notification from './src/components/Notification/index.js';
@@ -14,6 +15,7 @@ Vue.component(Button.name, Button);
 Vue.component(ButtonGroup.name, ButtonGroup);
 Vue.component(DropDown.name, DropDown);
 Vue.component(DropDownItem.name, DropDownItem);
+Vue.component(Switch.name, Switch);
 
 Vue.prototype.$Kui = {
   MainBus,

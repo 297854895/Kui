@@ -34,6 +34,8 @@
   margin-left: 0;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
 .k-button-group .k-button:last-child{
   border-top-right-radius: inherit;
@@ -62,6 +64,7 @@
 }
 .k-button-group .k-dropdown{
   border-radius: 0;
+  vertical-align: top;
 }
 .k-button-group .k-dropdown:first-child{
   border-top-left-radius: inherit;
@@ -78,7 +81,7 @@
 /*DropDown*/
 .k-dropdown{
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
 }
 .k-dropdown i:last-child{
@@ -424,4 +427,45 @@ button::-moz-focus-inner {
   padding: 0;
   border: none;
   right: -360px;
+}
+/*switch*/
+.k-switch{
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: all .35s ease-in ;
+}
+.k-switch-default {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+}
+.k-switch a{
+  display: block;
+  position: absolute;
+  top: 2px;
+  transition: all .35s ease-in-out;
+}
+.k-switch-disable a{
+  left: 2px;
+}
+.k-switch-enable a{
+  left: 22px;
+}
+.k-switch-enable {
+  background: #4db3ff;
+}
+.k-switch-circle{
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+}
+.k-switch-animate{
+  width: 24px;
+}
+.k-switch-status-disable{
+  cursor: not-allowed;
 }

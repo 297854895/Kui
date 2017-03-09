@@ -1,9 +1,9 @@
 <template>
   <button
+    v-bind="bindAttr"
     type="button"
     :class="`k-button k-button-${type} k-button-${size} ${disable ? 'k-button-disable' : ''} ${shape ? 'k-button-circle' : ''} ${radius ? 'k-button-radius' : ''} ${className}`"
     :style="`font-size: ${fontSize}; ${type === 'circle' ? '' : 'width:' + width + ';' } ${cssStyle}`"
-    :id="id"
     @click="handleClick"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave">
@@ -17,6 +17,14 @@
       type: {
         type: String,
         default: 'default'
+      },
+      bindAttr: {
+        type: Object,
+        default: () => {return {}}
+      },
+      className: {
+        type: String,
+        default: ''
       },
       disable: {
         type: Boolean,
@@ -39,14 +47,6 @@
         default: '12px'
       },
       cssStyle: {
-        type: String,
-        default: ''
-      },
-      id: {
-        type: String,
-        default: ''
-      },
-      className: {
         type: String,
         default: ''
       },

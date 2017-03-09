@@ -1,6 +1,7 @@
 <template>
   <span
-    :class="`k-dropdown`"
+    v-bind="bindAttr"
+    class="k-dropdown"
     @mouseenter="hoverShowMenu"
     @mouseleave="hoverHideMenu">
     <k-button
@@ -11,7 +12,6 @@
       :size="size"
       :fontSize="fontSize"
       :cssStyle="cssStyle"
-      :id="id"
       :className="className"
       :loading="loading"
       :icon="icon"
@@ -35,9 +35,17 @@
       'k-button': Button
     },
     props: {
+      oneMenu: {
+        type: Boolean,
+        default: true
+      },
       buttonName: {
         type: String,
         default: 'DropDown'
+      },
+      bindAttr: {
+        type: Object,
+        default: () => {return {}}
       },
       eventType: {
         type: String,
@@ -71,10 +79,6 @@
         type: String,
         default: ''
       },
-      id: {
-        type: String,
-        default: ''
-      },
       className: {
         type: String,
         default: ''
@@ -93,6 +97,7 @@
       }
     },
     mounted() {
+      if (!this.oneMenu) return;
       this.$Kui.MainBus.listen.$on('closeAllMenu', () => {
         if (this.show) {
           this.show = !this.show;
@@ -111,14 +116,16 @@
       },
       showMenu() {
         if (this.eventType !== 'click') return;
-        if (!this.show) {
+        if (!this.show && this.oneMenu) {
           this.$Kui.MainBus.closeAllMenu('closeAllMenu');
         }
         this.show = !this.show;
       },
       hoverShowMenu() {
         if (this.eventType !== 'hover') return;
-        this.$Kui.MainBus.closeAllMenu('closeAllMenu');
+        if (this.oneMenu) {
+          this.$Kui.MainBus.closeAllMenu('closeAllMenu');
+        }
         if (this.showTimer) {
           clearTimeout(this.showTimer);
           this.showTimer = null;
