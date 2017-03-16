@@ -14,6 +14,131 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+.k-clear-float{
+  clear: both;
+}
+/*Grid*/
+.k-col{
+  position: relative;
+  float: left;
+}
+.k-row{
+  width: 100%;
+  position: relative;
+  height: auto;
+  clear: both;
+}
+.k-col-0{
+  width: 0%;
+}
+.k-col-1{
+  width: 8.333333333%
+}
+.k-col-2{
+  width: 16.666666667%
+}
+.k-col-3{
+  width: 25%
+}
+.k-col-4{
+  width: 33.333333333%
+}
+.k-col-5{
+  width: 41.666666667%
+}
+.k-col-6{
+  width: 50%
+}
+.k-col-7{
+  width: 58.3333333333%
+}
+.k-col-8{
+  width: 66.666666667%
+}
+.k-col-9{
+  width: 75%
+}
+.k-col-10{
+  width: 83.3333333333%
+}
+.k-col-11{
+  width: 91.666666667%
+}
+.k-col-12{
+  width: 100%
+}
+.k-col-right-1{
+  margin-right: 8.333333333%
+}
+.k-col-right-2{
+  margin-right: 16.666666667%
+}
+.k-col-right-3{
+  margin-right: 25%
+}
+.k-col-right-4{
+  margin-right: 33.333333333%
+}
+.k-col-right-5{
+  margin-right: 41.666666667%
+}
+.k-col-right-6{
+  margin-right: 50%
+}
+.k-col-right-7{
+  margin-right: 58.3333333333%
+}
+.k-col-right-8{
+  margin-right: 66.666666667%
+}
+.k-col-right-9{
+  margin-right: 75%
+}
+.k-col-right-10{
+  margin-right: 83.3333333333%
+}
+.k-col-right-11{
+  margin-right: 91.666666667%
+}
+.k-col-right-12{
+  margin-right: 100%
+}
+.k-col-left-1{
+  margin-left: 8.333333333%
+}
+.k-col-left-2{
+  margin-left: 16.666666667%
+}
+.k-col-left-3{
+  margin-left: 25%
+}
+.k-col-left-4{
+  margin-left: 33.333333333%
+}
+.k-col-left-5{
+  margin-left: 41.666666667%
+}
+.k-col-left-6{
+  margin-left: 50%
+}
+.k-col-left-7{
+  margin-left: 58.3333333333%
+}
+.k-col-left-8{
+  margin-left: 66.666666667%
+}
+.k-col-left-9{
+  margin-left: 75%
+}
+.k-col-left-10{
+  margin-left: 83.3333333333%
+}
+.k-col-left-11{
+  margin-left: 91.666666667%
+}
+.k-col-left-12{
+  margin-left: 100%
+}
 /*ButtonGroup*/
 .k-button-group{
   font-size: 0px;
@@ -107,9 +232,9 @@
   position: relative;
   padding: 6px 10px;
   line-height: 1;
-  color: #666;
+  color: #888;
   cursor: pointer;
-  transition: background-color .15s ease-out;
+  transition: color .15s ease-out;
 }
 .k-dropdown-menu-item-icon{
   padding-left: 2em;
@@ -123,11 +248,11 @@
   margin: auto;
 }
 .k-dropdown-menu-item:hover{
-  background-color: rgba(0, 0, 0, .1);
+  color: #666;
 }
 .k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{
   height: auto;
-  transition: all .2s ease;
+  transition: all .15s ease-out;
 }
 .k-dropdown-menu-enter, .k-dropdown-menu-leave-active{
   height: 0;
