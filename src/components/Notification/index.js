@@ -8,14 +8,14 @@ const NotificationFn = (type, options) => {
     const knotification = Vue.component('knotification', {
       template: `<div class="k-notification-wrap"></div>`,
       mounted () {
-        const _notifications = new notifications({type: type,...options}).$mount();
+        const _notifications = new notifications(Object.assign({type}, options)).$mount();
         this.$el.appendChild(_notifications.$el);
       }
     });
     const _knotification = new knotification().$mount();
     document.querySelectorAll('body')[0].appendChild(_knotification.$el);
   }else {
-    const _notifications = new notifications({type: type,...options}).$mount();
+    const _notifications = new notifications(Object.assign({type}, options)).$mount();
     _notification[0].appendChild(_notifications.$el);
   }
 };

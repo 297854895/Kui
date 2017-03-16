@@ -7,4 +7,4 @@ const MainBus = {};
   };
 });
 MainBus.listen = vueMainBus;
-module.exports = MainBus;
+export default MainBus;
