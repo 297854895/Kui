@@ -502,6 +502,8 @@ button::-moz-focus-inner {
 }
 .k-notification-right h3{
   padding-top: 6px;
+  font-size: 14px;
+  font-weight: bold;
   margin: 0;
 }
 .k-notification-right i{
@@ -509,8 +511,10 @@ button::-moz-focus-inner {
   cursor: pointer;
 }
 .k-notification-right p{
+  font-size: 13px;
   margin: 0;
   padding: 10px 0;
+  word-break: break-all;
 }
 .k-notification-left, .k-notification-right{
   float: left;
@@ -533,13 +537,13 @@ button::-moz-focus-inner {
 .k-notification-warning {
   color: #8a6d3b;
   background: #fcf8e3;
-  border:1px solid #faebcc;
+  border: 1px solid #faebcc;
 }
 .k-notification-fade-enter-active{
-  transition: all .3s ease;
+  transition: all .2s linear;
 }
 .k-notification-fade-leave-active{
-  transition: all .35s ease-out;
+  transition: all .25s linear;
 }
 .k-notification-fade-enter{
   opacity: 0;
@@ -553,7 +557,63 @@ button::-moz-focus-inner {
   border: none;
   right: -360px;
 }
-/*switch*/
+/*Message*/
+.k-message-wrap{
+  position: fixed;
+  top: 20px;
+  z-index: 99;
+  height: 0px;
+  width: 100%;
+  text-align: center;
+}
+.k-message{
+  display: inline-block;
+  top: 0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.k-message i{
+  margin-right: 8px;
+}
+.k-message-success {
+  background: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+.k-message-info {
+  color: #31708f;
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
+}
+.k-message-error {
+  color: #a94442;
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+}
+.k-message-warning {
+  color: #8a6d3b;
+  background: #fcf8e3;
+  border:1px solid #faebcc;
+}
+.k-message-default {
+  background: #fff;
+  color: #888;
+  border: 1px solid #d9d9d9;
+}
+.k-message-close{
+  cursor: pointer;
+  margin-left: 12px;
+}
+.k-animate-top-in-enter-active, .k-animate-top-in-leave-active{
+  transition: all .15s ease-out;
+}
+.k-animate-top-in-enter, .k-animate-top-in-leave-active{
+  margin-top: -30px;
+  opacity: 0;
+}
+/*Switch*/
 .k-switch{
   display: inline-block;
   vertical-align: middle;

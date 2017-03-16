@@ -13,6 +13,7 @@ import Switch from './src/components/Switch/Switch.vue';
 
 import MainBus from './src/components/MainBus/index.js';
 import Notification from './src/components/Notification/index.js';
+import Message from './src/components/Message/index.js';
 
 Vue.component(Button.name, Button);
 Vue.component(ButtonGroup.name, ButtonGroup);
@@ -26,4 +27,5 @@ Vue.component(Switch.name, Switch);
 Vue.prototype.$Kui = {
   MainBus,
   Notification,
+  Message
 }

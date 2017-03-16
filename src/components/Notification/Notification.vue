@@ -1,17 +1,17 @@
 <template>
-    <transition name="k k-notification-fade">
-      <div ref="noti_" :class="'k k-notification ' + (this.$options.type ? 'k-notification-' + this.$options.type : 'k-notification-default')" v-if="show">
-        <div class="k k-notification-left">
-          <i :class="returnIcon(this.$options.type)"></i>
-        </div><div class="k k-notification-right">
-          <h3 class="k k-notification-title">
-            <span>{{returnTitle(this.$options.type, this.$options.title)}}</span>
-            <i class="k fa fa-close" @click="close"></i>
-          </h3>
-          <p>{{this.$options.content ? this.$options.content : ''}}</p>
-        </div>
+  <transition name="k-notification-fade">
+    <div :class="'k-notification ' + (this.$options.type ? 'k-notification-' + this.$options.type : 'k-notification-default')" v-if="show">
+      <div class="k-notification-left">
+        <i :class="returnIcon(this.$options.type)"></i>
+      </div><div class="k-notification-right">
+        <h3 class="k-notification-title">
+          <span>{{returnTitle(this.$options.type, this.$options.title)}}</span>
+          <i class="fa fa-close" @click="close"></i>
+        </h3>
+        <p>{{this.$options.content ? this.$options.content : ''}}</p>
       </div>
-    </transition>
+    </div>
+  </transition>
 </template>
 <script>
   export default{

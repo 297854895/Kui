@@ -8,14 +8,14 @@ const MessageFn = (type, options) => {
     const kmessage = Vue.component('k-message', {
       template: `<div class="k-message-wrap"></div>`,
       mounted () {
-        const _messages = new messages({type: type,...options}).$mount();
+        const _messages = new messages(Object.assign({type}, options)).$mount();
         this.$el.appendChild(_messages.$el);
       }
     });
     const _kmessage = new kmessage().$mount();
     document.querySelectorAll('body')[0].appendChild(_kmessage.$el);
   }else {
-    const _messages = new messages({type: type,...options}).$mount();
+    const _messages = new messages(Object.assign({type}, options)).$mount();
     _message[0].appendChild(_messages.$el);
   }
 };
