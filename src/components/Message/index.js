@@ -13,7 +13,7 @@ const MessageFn = (type, options) => {
       }
     });
     const _kmessage = new kmessage().$mount();
-    document.querySelectorAll('body')[0].appendChild(_kmessage.$el);
+    document.querySelector('body').appendChild(_kmessage.$el);
   }else {
     const _messages = new messages(Object.assign({type}, options)).$mount();
     _message[0].appendChild(_messages.$el);

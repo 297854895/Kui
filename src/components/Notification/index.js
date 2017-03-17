@@ -13,7 +13,7 @@ const NotificationFn = (type, options) => {
       }
     });
     const _knotification = new knotification().$mount();
-    document.querySelectorAll('body')[0].appendChild(_knotification.$el);
+    document.querySelector('body').appendChild(_knotification.$el);
   }else {
     const _notifications = new notifications(Object.assign({type}, options)).$mount();
     _notification[0].appendChild(_notifications.$el);

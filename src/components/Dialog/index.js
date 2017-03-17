@@ -1,30 +1,15 @@
 import Vue from 'vue';
 import kDialog from './Dialog';
-const kBus = new Vue();
+const Dialogs = Vue.extend(kDialog);
 
-export default (data) => {
-  const kdialog = Vue.component('kdialog', {
-    components: {
-      'k-dialog': kDialog
-    },
-    data () {
-      return {
-        dialogData: data
-      }
-    },
-    created () {
-      kBus.$on('kdialog', (data) => {
-        if (data) {
-          this.$data.dialogData = data;
-        }
-      });
-    },
-    render (h) {
-      return (
-        <k-dialog set={this._data.dialogData}></k-dialog>
-      )
+export default (options) => {
+  const kdialog = Vue.component('k-dialog', {
+    template: `<div class="k-dialog-wrap"></div>`,
+    mounted () {
+      const _dialogs = new Dialogs(options).$mount();
+      this.$el.appendChild(_dialogs.$el);
     }
   });
-  const _kdialog = new kdialog().$mount();
-  document.querySelectorAll('body')[0].appendChild(_kdialog.$el);
-};
+  const _dialog = new kdialog().$mount();
+  document.querySelector('body').appendChild(_dialog.$el);
+}

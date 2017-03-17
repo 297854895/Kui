@@ -606,6 +606,14 @@ button::-moz-focus-inner {
   cursor: pointer;
   margin-left: 12px;
 }
+.k-message-container{
+  position: absolute;
+  height: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 .k-animate-top-in-enter-active, .k-animate-top-in-leave-active{
   transition: all .15s ease-out;
 }

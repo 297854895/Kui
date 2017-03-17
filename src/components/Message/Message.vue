@@ -1,8 +1,10 @@
 <template>
-  <transition name="k-animate-top-in">
+  <transition
+    name="k-animate-top-in">
     <div
-      v-if="show"
-      style="height: 0px">
+      class="k-message-container"
+      ref="message"
+      v-if="show">
       <div
         :class="`k-message ${this.$options.type ? 'k-message-' + this.$options.type : 'k-message-default'}`">
         <i :class="returnIcon(this.$options.type)"></i>{{this.$options.content ? this.$options.content : ''}}<i @click="close" v-if="!this.$options.remove" class="fa fa-close k-message-close"></i>
@@ -23,9 +25,9 @@
          this.show = true;
        }, 1);
        if (this.$options.remove) {
-        //  setTimeout(() => {
-        //    this.show = false;
-        //  }, Number.parseInt(this.$options.remove));
+         setTimeout(() => {
+           this.show = false;
+         }, Number.parseInt(this.$options.remove));
        }
        const unWatch = this.$watch('show', (newValue, oldValue) => {
          if (!newValue) {
