@@ -4,9 +4,6 @@ const Dialogs = Vue.extend(kDialog);
 
 export default (options) => {
   const kdialog = Vue.component('k-dialog', {
-    template: `<transition name="k-dialog-fade-in">
-                 <div class="k-dialog-wrap" v-if="show" ref="DialogWrap"></div>
-               </transition>`,
     data() {
       return {
         show: false
@@ -26,6 +23,31 @@ export default (options) => {
       this.$on('close-dialog', () => {
         this.show = false;
       });
+    },
+    render(h) {
+      if (this.show) {
+        return h(
+          'transition',
+          {
+            attrs: {
+              name: 'k-dialog-fade-in'
+            },
+          },
+          [
+            h(
+              'div',
+              {
+                attrs: {
+                  class: 'k-dialog-wrap',
+                },
+                ref: 'DialogWrap'
+              }
+            )
+          ]
+        )
+      } else {
+        return;
+      }
     }
   });
   const _dialog = new kdialog().$mount();

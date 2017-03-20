@@ -6,10 +6,19 @@ const MessageFn = (type, options) => {
   const _message = document.querySelectorAll('.k-message-wrap');
   if (_message.length === 0) {
     const kmessage = Vue.component('k-message', {
-      template: `<div class="k-message-wrap"></div>`,
       mounted () {
         const _messages = new messages(Object.assign({type}, options)).$mount();
         this.$el.appendChild(_messages.$el);
+      },
+      render(h) {
+        return h(
+                  'div',
+                  {
+                    attrs: {
+                      class: 'k-message-wrap'
+                    }
+                  }
+                )
       }
     });
     const _kmessage = new kmessage().$mount();

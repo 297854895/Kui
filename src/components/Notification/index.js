@@ -6,10 +6,19 @@ const NotificationFn = (type, options) => {
   const _notification = document.querySelectorAll('.k-notification-wrap');
   if (_notification.length === 0) {
     const knotification = Vue.component('knotification', {
-      template: `<div class="k-notification-wrap"></div>`,
       mounted () {
         const _notifications = new notifications(Object.assign({type}, options)).$mount();
         this.$el.appendChild(_notifications.$el);
+      },
+      render(h) {
+        return h(
+                  'div',
+                  {
+                    attrs: {
+                      class: 'k-notification-wrap'
+                    }
+                  }
+                )
       }
     });
     const _knotification = new knotification().$mount();
