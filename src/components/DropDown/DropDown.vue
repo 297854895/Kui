@@ -29,6 +29,8 @@
 </template>
 <script>
   import Button from '../Button/Button.vue';
+  import MainBus from '../MainBus/index.js';
+
   export default {
     name: 'k-dropdown',
     components: {
@@ -98,7 +100,7 @@
     },
     mounted() {
       if (!this.oneMenu) return;
-      this.$Kui.MainBus.listen.$on('closeAllMenu', () => {
+      MainBus.listen.$on('closeAllMenu', () => {
         if (this.show) {
           this.show = !this.show;
         }
