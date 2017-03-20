@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import kDialog from './Dialog';
+import kDialog from './Dialog.vue';
 const Dialogs = Vue.extend(kDialog);
 
 export default (options) => {

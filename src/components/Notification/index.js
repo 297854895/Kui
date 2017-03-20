@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import kNotification from './Notification';
+import kNotification from './Notification.vue';
 const notifications = Vue.extend(kNotification);
 
 const NotificationFn = (type, options) => {
@@ -19,7 +19,7 @@ const NotificationFn = (type, options) => {
     _notification[0].appendChild(_notifications.$el);
   }
 };
-let Notification = {};
+const Notification = {};
 ['success', 'warning', 'error', 'default', 'info'].forEach((type)=>{
   Notification[type] = (options) => {
     NotificationFn(type, options);

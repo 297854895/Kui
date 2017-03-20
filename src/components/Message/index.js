@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import kMessage from './Message';
+import kMessage from './Message.vue';
 const messages = Vue.extend(kMessage);
 
 const MessageFn = (type, options) => {
