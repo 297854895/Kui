@@ -1,9 +1,9 @@
 import Vue from 'vue';
 const vueMainBus = new Vue();
 const MainBus = {};
-['closeAllMenu', 'toggleDialogButtonStatus'].forEach((type)=>{
-  MainBus[type] = (options) => {
-    vueMainBus.$emit(options);
+['closeAllMenu'].forEach((type)=>{
+  MainBus[type] = (options, data) => {
+    vueMainBus.$emit(options, data);
   };
 });
 MainBus.listen = vueMainBus;

@@ -601,7 +601,7 @@ button::-moz-focus-inner {
 .k-message-wrap{
   position: fixed;
   top: 20px;
-  z-index: 99;
+  z-index: 999999;
   height: 0px;
   width: 100%;
   text-align: center;

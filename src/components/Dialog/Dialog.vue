@@ -4,56 +4,79 @@
       class="k-dialog"
       v-show="show">
       <h3>
-        {{this.$options.title || 'Dialog'}}
+        {{this.title}}
         <i class="fa fa-close k-dialog-close" @click="close"></i>
       </h3>
-      <p class="k-dialog-content">{{this.$options.content || ''}}</p>
-      <div class="k-dialog-button">
-        <k-button @click="cancel">取消</k-button>
+      <p class="k-dialog-content">{{this.content}}</p>
+      <div class="k-dialog-button" @click.stop>
         <k-button
-          :loading="loading"
+          :loading="this.cancelLoading"
+          size="large"
+          @click="_cancel">取消</k-button>
+        <k-button
+          :loading="this.sureLoading"
+          size="large"
           type="primary"
-          @click="sure">确认</k-button>
+          @click="_sure">确认</k-button>
       </div>
     </div>
   </transition>
 </template>
 <script>
   import Button from '../Button/Button.vue';
+
   export default {
     name: 'k-dialog',
     components: {
       'k-button': Button
     },
+    props: {
+      title: {
+        type: String,
+        default: 'Dialog'
+      },
+      content: {
+        type: String,
+        default: ''
+      },
+      cancelLoading: {
+        type: Boolean,
+        default: false
+      },
+      sureLoading: {
+        type: Boolean,
+        default: false
+      },
+      sure: {
+        type: Function
+      },
+      cancel: {
+        type: Function
+      }
+    },
     data() {
       return {
-        show: false,
-        loading: false
+        show: false
       }
     },
     mounted() {
       this.show = true;
     },
     methods: {
-      loadingStart() {
-        this.loading = true;
-      },
       close() {
         this.show = false;
-        this.$options.parent.$emit('close-dialog');
+        this.$parent.$emit('close-dialog');
       },
-      sure() {
-        // if (this.$options.sure && typeof this.$options.sure === 'function') {
-        //   this.loadingStart();
-        //   // this.$options.sure();
-        // } else {
-        //   this.close();
-        // }
-      },
-      cancel() {
-        if (this.$options.cancel && typeof this.$options.cancel === 'function') {
-          this.$options.cancel();
+      _sure() {
+        if (this.sure && typeof this.sure === 'function') {
+          this.sure();
+        } else {
           this.close();
+        }
+      },
+      _cancel() {
+        if (this.cancel && typeof this.cancel === 'function') {
+          this.cancel();
         } else {
           this.close();
         }

@@ -73,12 +73,15 @@
     },
     methods: {
       handleClick() {
+        if (this.loading) return;
         this.$emit('click');
       },
       handleMouseEnter() {
+        if (this.loading) return;
         this.$emit('mouseenter');
       },
       handleMouseLeave() {
+        if (this.loading) return;
         this.$emit('mouseleave');
       }
     }

@@ -7055,9 +7055,9 @@ module.exports = function(it){
 
 var vueMainBus = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]();
 var MainBus = {};
-['closeAllMenu', 'toggleDialogButtonStatus'].forEach(function (type) {
-  MainBus[type] = function (options) {
-    vueMainBus.$emit(options);
+['closeAllMenu'].forEach(function (type) {
+  MainBus[type] = function (options, data) {
+    vueMainBus.$emit(options, data);
   };
 });
 MainBus.listen = vueMainBus;
@@ -7136,34 +7136,51 @@ module.exports = function(it){
 
 
 
-var Dialogs = __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */].extend(__WEBPACK_IMPORTED_MODULE_2__Dialog_vue___default.a);
 
 /* harmony default export */ __webpack_exports__["a"] = function (options) {
   var kdialog = __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */].component('k-dialog', {
+    components: {
+      'k-dialogs': __WEBPACK_IMPORTED_MODULE_2__Dialog_vue___default.a
+    },
     data: function data() {
       return {
-        show: false
+        show: false,
+        cancelLoading: false,
+        sureLoading: false
       };
     },
-
-    watch: {
-      show: function show(newValue) {
-        var _this = this;
-
-        if (!newValue) return;
-        var _dialogs = new Dialogs(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default()({ parent: this }, options)).$mount();
-        this.$nextTick(function () {
-          _this.$refs.DialogWrap.appendChild(_dialogs.$el);
-        });
-      }
-    },
     mounted: function mounted() {
-      var _this2 = this;
+      var _this = this;
 
       this.show = true;
       this.$on('close-dialog', function () {
-        _this2.show = false;
+        setTimeout(function () {
+          _this.show = false;
+        }, 50);
       });
+    },
+
+    methods: {
+      toggleLoading: function toggleLoading(data) {
+        var _this2 = this;
+
+        if (!this.show) return;
+        var status = data.action === 'start' ? true : data.action === 'error' ? 'error' : false;
+        if (!status) {
+          this.$children[0].show = false;
+          setTimeout(function () {
+            _this2.show = false;
+          }, 50);
+          return;
+        }
+        if (status === 'error') {
+          this[data.type + 'Loading'] = false;
+          if (!data.error && typeof data.error !== 'function') return;
+          data.error();
+          return;
+        }
+        this[data.type + 'Loading'] = true;
+      }
     },
     render: function render(h) {
       if (this.show) {
@@ -7176,7 +7193,9 @@ var Dialogs = __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */].extend(__WEBP
             class: 'k-dialog-wrap'
           },
           ref: 'DialogWrap'
-        })]);
+        }, [h('k-dialogs', {
+          props: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default()({ sureLoading: this.sureLoading, cancelLoading: this.cancelLoading }, options)
+        })])]);
       } else {
         return;
       }
@@ -7184,6 +7203,7 @@ var Dialogs = __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */].extend(__WEBP
   });
   var _dialog = new kdialog().$mount();
   document.querySelector('body').appendChild(_dialog.$el);
+  return _dialog;
 };
 
 /***/ }),
@@ -7614,12 +7634,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     handleClick: function handleClick() {
+      if (this.loading) return;
       this.$emit('click');
     },
     handleMouseEnter: function handleMouseEnter() {
+      if (this.loading) return;
       this.$emit('mouseenter');
     },
     handleMouseLeave: function handleMouseLeave() {
+      if (this.loading) return;
       this.$emit('mouseleave');
     }
   }
@@ -7684,15 +7707,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'k-dialog',
   components: {
     'k-button': __WEBPACK_IMPORTED_MODULE_0__Button_Button_vue___default.a
   },
+  props: {
+    title: {
+      type: String,
+      default: 'Dialog'
+    },
+    content: {
+      type: String,
+      default: ''
+    },
+    cancelLoading: {
+      type: Boolean,
+      default: false
+    },
+    sureLoading: {
+      type: Boolean,
+      default: false
+    },
+    sure: {
+      type: Function
+    },
+    cancel: {
+      type: Function
+    }
+  },
   data: function data() {
     return {
-      show: false,
-      loading: false
+      show: false
     };
   },
   mounted: function mounted() {
@@ -7700,18 +7747,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    loadingStart: function loadingStart() {
-      this.loading = true;
-    },
     close: function close() {
       this.show = false;
-      this.$options.parent.$emit('close-dialog');
+      this.$parent.$emit('close-dialog');
     },
-    sure: function sure() {},
-    cancel: function cancel() {
-      if (this.$options.cancel && typeof this.$options.cancel === 'function') {
-        this.$options.cancel();
+    _sure: function _sure() {
+      if (this.sure && typeof this.sure === 'function') {
+        this.sure();
+      } else {
         this.close();
+      }
+    },
+    _cancel: function _cancel() {
+      if (this.cancel && typeof this.cancel === 'function') {
+        this.cancel();
       } else {
         this.close();
       }
@@ -8563,7 +8612,7 @@ exports = module.exports = __webpack_require__(75)();
 
 
 // module
-exports.push([module.i, "/*common*/\n.k-absolute-menu{\n  position: absolute;\n  margin-top: 2px;\n  min-width: 100%;\n  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  z-index: 9999;\n}\n.k-border-box{\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-clear-float{\n  clear: both;\n}\n/*Grid*/\n.k-col{\n  position: relative;\n  float: left;\n}\n.k-row{\n  width: 100%;\n  position: relative;\n  height: auto;\n  clear: both;\n}\n.k-col-0{\n  width: 0%;\n}\n.k-col-1{\n  width: 8.333333333%\n}\n.k-col-2{\n  width: 16.666666667%\n}\n.k-col-3{\n  width: 25%\n}\n.k-col-4{\n  width: 33.333333333%\n}\n.k-col-5{\n  width: 41.666666667%\n}\n.k-col-6{\n  width: 50%\n}\n.k-col-7{\n  width: 58.3333333333%\n}\n.k-col-8{\n  width: 66.666666667%\n}\n.k-col-9{\n  width: 75%\n}\n.k-col-10{\n  width: 83.3333333333%\n}\n.k-col-11{\n  width: 91.666666667%\n}\n.k-col-12{\n  width: 100%\n}\n.k-col-right-1{\n  margin-right: 8.333333333%\n}\n.k-col-right-2{\n  margin-right: 16.666666667%\n}\n.k-col-right-3{\n  margin-right: 25%\n}\n.k-col-right-4{\n  margin-right: 33.333333333%\n}\n.k-col-right-5{\n  margin-right: 41.666666667%\n}\n.k-col-right-6{\n  margin-right: 50%\n}\n.k-col-right-7{\n  margin-right: 58.3333333333%\n}\n.k-col-right-8{\n  margin-right: 66.666666667%\n}\n.k-col-right-9{\n  margin-right: 75%\n}\n.k-col-right-10{\n  margin-right: 83.3333333333%\n}\n.k-col-right-11{\n  margin-right: 91.666666667%\n}\n.k-col-right-12{\n  margin-right: 100%\n}\n.k-col-left-1{\n  margin-left: 8.333333333%\n}\n.k-col-left-2{\n  margin-left: 16.666666667%\n}\n.k-col-left-3{\n  margin-left: 25%\n}\n.k-col-left-4{\n  margin-left: 33.333333333%\n}\n.k-col-left-5{\n  margin-left: 41.666666667%\n}\n.k-col-left-6{\n  margin-left: 50%\n}\n.k-col-left-7{\n  margin-left: 58.3333333333%\n}\n.k-col-left-8{\n  margin-left: 66.666666667%\n}\n.k-col-left-9{\n  margin-left: 75%\n}\n.k-col-left-10{\n  margin-left: 83.3333333333%\n}\n.k-col-left-11{\n  margin-left: 91.666666667%\n}\n.k-col-left-12{\n  margin-left: 100%\n}\n/*ButtonGroup*/\n.k-button-group{\n  font-size: 0px;\n  display: inline-table;\n  position: relative;\n}\n.k-button-group-radius{\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.k-button-group .k-button{\n  border-radius: 0;\n  margin-left: -1px;\n}\n.k-button-group .k-button:first-child{\n  margin-left: 0;\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:last-child{\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:hover{\n  z-index: 99;\n}\n.k-button-group .k-button-circle{\n  padding: auto;\n}\n.k-button-group .k-dropdown{\n  margin-left: -1px;\n}\n.k-button-group .k-dropdown-menu-item{\n  font-size: initial;\n}\n.k-button-group .k-dropdown:first-child{\n  margin-left: 0;\n}\n.k-button-group .k-dropdown{\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-dropdown{\n  border-radius: 0;\n  vertical-align: top;\n}\n.k-button-group .k-dropdown:first-child{\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.k-button-group .k-dropdown:last-child{\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n/*DropDown*/\n.k-dropdown{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n}\n.k-dropdown i:last-child{\n  margin-left: 10px;\n  transition: transform .15s ease-out;\n}\n.k-dropdown i:first-child{\n  margin-left: 0;\n  margin-right: 6px;\n}\n.k-dropdown-menu{\n  margin: 1px 0 0;\n  padding: 5px 0 15px 0;\n  background: #fff;\n  border: 1px solid #ccc;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  overflow: hidden;\n  color: #666;\n}\n.k-dropdown-menu-item{\n  list-style: none;\n  position: relative;\n  padding: 6px 10px;\n  line-height: 1;\n  color: #888;\n  cursor: pointer;\n  transition: color .15s ease-out;\n}\n.k-dropdown-menu-item-icon{\n  padding-left: 2em;\n}\n.k-dropdown-menu-item-i{\n  position: absolute;\n  left: 10px;\n  height: 1em;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n.k-dropdown-menu-item:hover{\n  color: #666;\n}\n.k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{\n  height: auto;\n  transition: all .15s ease-out;\n}\n.k-dropdown-menu-enter, .k-dropdown-menu-leave-active{\n  height: 0;\n  padding: 0;\n  transform: rotateX(30deg);\n  opacity: 0;\n}\n/*Button*/\nbutton::-moz-focus-inner {\n  padding: 0;\n  border: none;\n  margin: 0;\n}\n.k-button{\n  position: relative;\n  display: inline-block;\n  outline: none;\n  font-weight: 400;\n  text-align: center;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  line-height: 1;\n  /*line-height: 1.5;*/\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n  transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n}\n.k-button-radius{\n  border-radius: 4px;\n}\n.k-button i:first-child{\n  margin-right: 6px;\n}\n.k-button i:last-child{\n  margin-right: 0px;\n}\n.k-button-mini{\n  padding: 2px 4px;\n}\n.k-button-small{\n  padding: 4px 8px;\n}\n.k-button-normal{\n  padding: 6px 14px;\n}\n.k-button-large{\n  padding: 8px 16px;\n}\n.k-button-default{\n  background: #fff;\n  color: #666;\n  border-color: #ccc;\n}\n.k-button-default:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-default:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-ghost{\n  color: #666;\n  background: none;\n  border-color: #ccc;\n}\n.k-button-ghost:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-ghost:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-dashed{\n  border: 1px dashed #ccc;\n  background: #fff;\n  color: #666;\n}\n.k-button-dashed:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-dashed:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-text{\n  background: transparent;\n  color: #20a0ff;\n  border-color: transparent;\n}\n.k-button-text:hover{\n  color: #4db3ff;\n}\n.k-button-text:active{\n  color: #3879D9;\n}\n.k-button-primary{\n  background: #20a0ff;\n  color: #fff;\n  border-color: #20a0ff;\n}\n.k-button-primary:hover{\n  border-color: #4db3ff;\n  background: #4db3ff;\n  color: #fff;\n}\n.k-button-primary:active{\n  border-color: #3879D9;\n  background: #3879D9;\n  color: #fff;\n}\n.k-button-success {\n  border-color: #13ce66;\n  background: #13ce66;\n  color: #fff;\n}\n.k-button-success:hover {\n  background: #42d885;\n  border-color: #42d885;\n}\n.k-button-success:active {\n  background: #42AE77;\n  border-color: #42AE77;\n}\n.k-button-warning {\n  border-color: #f7ba2a;\n  background: #f7ba2a;\n  color: #fff;\n}\n.k-button-warning:hover {\n  background: #f9c885;\n  border-color: #f9c885;\n}\n.k-button-warning:active {\n  background: #FF9900;\n  border-color: #FF9900;\n}\n.k-button-danger {\n  border-color: #ff4949;\n  background: #ff4949;\n  color: #fff;\n}\n.k-button-danger:hover {\n  background: #ff6d6d;\n  border-color: #ff6d6d;\n}\n.k-button-danger:active {\n  background: #cc3333;\n  border-color: #cc3333;\n}\n.k-button-info {\n  border-color: #50bfff;\n  background: #50bfff;\n  color: #fff;\n}\n.k-button-info:hover {\n  background: #73ccff;\n  border-color: #73ccff;\n}\n.k-button-info:active {\n  background: #20a0ff;\n  border-color: #20a0ff;\n}\n.k-button-disable{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:hover{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:active{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-circle{\n  border-radius: 50%;\n  padding: 0;\n  width: 2em;\n  height: 2em;\n}\n/*Switch*/\n.k-switch{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n  background: #e0e0e0;\n  cursor: pointer;\n  transition: all .35s ease-in ;\n}\n.k-switch-default {\n  width: 40px;\n  height: 20px;\n  border-radius: 20px;\n}\n.k-switch a{\n  display: block;\n  position: absolute;\n  top: 2px;\n  transition: all .35s ease-in-out;\n}\n.k-switch-disable a{\n  left: 2px;\n}\n.k-switch-enable a{\n  left: 22px;\n}\n.k-switch-enable {\n  background: #4db3ff;\n}\n.k-switch-circle{\n  width: 16px;\n  height: 16px;\n  background: #fff;\n  border-radius: 50%;\n}\n.k-switch-animate{\n  width: 24px;\n}\n.k-switch-status-disable{\n  cursor: not-allowed;\n}\n/*notification*/\n.k-notification{\n  position: relative;\n  font-size: 14px;\n  margin-top: 16px;\n  width: 360px;\n  height: auto;\n  border-radius: 3px;\n  border: 1px solid #c0ccda;\n  right: 4px;\n  padding: 12px 20px 12px 10px;\n  color: #666;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-notification-wrap{\n  position: fixed;\n  right: 0;\n  top: 60px;\n}\n.k-notification-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-notification p{\n  color: inherit;\n}\n.k-notification-title{\n  color: inherit;\n}\n.k-notification-left{\n  width: 72px;\n  margin-top: 16px;\n  height: 100%;\n  text-align: center;\n}\n.k-notification-left i{\n  font-size: 32px;\n  display: inline-block;\n}\n.k-notification-right{\n  width: 248px;\n}\n.k-notification-right h3{\n  padding-top: 6px;\n  font-size: 14px;\n  font-weight: bold;\n  margin: 0;\n}\n.k-notification-right i{\n  float: right;\n  cursor: pointer;\n}\n.k-notification-right p{\n  font-size: 13px;\n  margin: 0;\n  padding: 10px 0;\n  word-break: break-all;\n}\n.k-notification-left, .k-notification-right{\n  float: left;\n}\n.k-notification-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-notification-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-notification-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-notification-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border: 1px solid #faebcc;\n}\n.k-notification-fade-enter-active{\n  transition: all .2s linear;\n}\n.k-notification-fade-leave-active{\n  transition: all .25s linear;\n}\n.k-notification-fade-enter{\n  opacity: 0;\n  height: 0;\n  right: -360px;\n}\n.k-notification-fade-leave-active{\n  opacity: 0;\n  height: 0;\n  padding: 0;\n  border: none;\n  right: -360px;\n}\n/*Message*/\n.k-message-wrap{\n  position: fixed;\n  top: 20px;\n  z-index: 99;\n  height: 0px;\n  width: 100%;\n  text-align: center;\n}\n.k-message{\n  display: inline-block;\n  top: 0;\n  border-radius: 4px;\n  padding: 6px 12px;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n}\n.k-message i{\n  margin-right: 8px;\n}\n.k-message-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-message-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-message-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-message-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border:1px solid #faebcc;\n}\n.k-message-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-message-close{\n  cursor: pointer;\n  margin-left: 12px;\n}\n.k-message-container{\n  position: absolute;\n  height: 0px;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n.k-animate-top-in-enter-active, .k-animate-top-in-leave-active{\n  transition: all .15s ease-out;\n}\n.k-animate-top-in-enter, .k-animate-top-in-leave-active{\n  margin-top: -30px;\n  opacity: 0;\n}\n/*Dialog*/\n.k-dialog-wrap{\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 99999;\n}\n.k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{\n  transition: all .2s ease;\n}\n.k-dialog-fade-in-enter, .k-dialog-fade-in-leave-active{\n  opacity: 0;\n}\n.k-dialog{\n  position: relative;\n  display: inline-block;\n  margin-top: 35px;\n  width: 400px;\n  background: #fff;\n  border-radius: 4px;\n  border: 1px solid #ccc;\n  padding: 20px 16px;\n  text-align: left;\n}\n.k-dialog h3{\n  font-size: 16px;\n  padding: 0;\n  padding-left: 10px;\n  margin: 0;\n  text-align: initial;\n  color: #333;\n}\n.k-dialog-close{\n  color: #666;\n  float: right;\n  margin-right: 10px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.k-dialog-content{\n  color: #555;\n  text-align: initial;\n  padding: 0;\n  margin: 0;\n  font-size: 14px;\n  text-indent: 2em;\n  padding: 22px 0 16px;\n}\n.k-dialog-enter-active, .k-dialog-leave-active{\n  transition: all .15s ease;\n}\n.k-dialog-enter, .k-dialog-leave-active{\n  margin-top: 0;\n  opacity: 0;\n}\n.k-dialog-button{\n  padding-top: 20px;\n  text-align: right;\n}\n", ""]);
+exports.push([module.i, "/*common*/\n.k-absolute-menu{\n  position: absolute;\n  margin-top: 2px;\n  min-width: 100%;\n  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  z-index: 9999;\n}\n.k-border-box{\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-clear-float{\n  clear: both;\n}\n/*Grid*/\n.k-col{\n  position: relative;\n  float: left;\n}\n.k-row{\n  width: 100%;\n  position: relative;\n  height: auto;\n  clear: both;\n}\n.k-col-0{\n  width: 0%;\n}\n.k-col-1{\n  width: 8.333333333%\n}\n.k-col-2{\n  width: 16.666666667%\n}\n.k-col-3{\n  width: 25%\n}\n.k-col-4{\n  width: 33.333333333%\n}\n.k-col-5{\n  width: 41.666666667%\n}\n.k-col-6{\n  width: 50%\n}\n.k-col-7{\n  width: 58.3333333333%\n}\n.k-col-8{\n  width: 66.666666667%\n}\n.k-col-9{\n  width: 75%\n}\n.k-col-10{\n  width: 83.3333333333%\n}\n.k-col-11{\n  width: 91.666666667%\n}\n.k-col-12{\n  width: 100%\n}\n.k-col-right-1{\n  margin-right: 8.333333333%\n}\n.k-col-right-2{\n  margin-right: 16.666666667%\n}\n.k-col-right-3{\n  margin-right: 25%\n}\n.k-col-right-4{\n  margin-right: 33.333333333%\n}\n.k-col-right-5{\n  margin-right: 41.666666667%\n}\n.k-col-right-6{\n  margin-right: 50%\n}\n.k-col-right-7{\n  margin-right: 58.3333333333%\n}\n.k-col-right-8{\n  margin-right: 66.666666667%\n}\n.k-col-right-9{\n  margin-right: 75%\n}\n.k-col-right-10{\n  margin-right: 83.3333333333%\n}\n.k-col-right-11{\n  margin-right: 91.666666667%\n}\n.k-col-right-12{\n  margin-right: 100%\n}\n.k-col-left-1{\n  margin-left: 8.333333333%\n}\n.k-col-left-2{\n  margin-left: 16.666666667%\n}\n.k-col-left-3{\n  margin-left: 25%\n}\n.k-col-left-4{\n  margin-left: 33.333333333%\n}\n.k-col-left-5{\n  margin-left: 41.666666667%\n}\n.k-col-left-6{\n  margin-left: 50%\n}\n.k-col-left-7{\n  margin-left: 58.3333333333%\n}\n.k-col-left-8{\n  margin-left: 66.666666667%\n}\n.k-col-left-9{\n  margin-left: 75%\n}\n.k-col-left-10{\n  margin-left: 83.3333333333%\n}\n.k-col-left-11{\n  margin-left: 91.666666667%\n}\n.k-col-left-12{\n  margin-left: 100%\n}\n/*ButtonGroup*/\n.k-button-group{\n  font-size: 0px;\n  display: inline-table;\n  position: relative;\n}\n.k-button-group-radius{\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.k-button-group .k-button{\n  border-radius: 0;\n  margin-left: -1px;\n}\n.k-button-group .k-button:first-child{\n  margin-left: 0;\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:last-child{\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:hover{\n  z-index: 99;\n}\n.k-button-group .k-button-circle{\n  padding: auto;\n}\n.k-button-group .k-dropdown{\n  margin-left: -1px;\n}\n.k-button-group .k-dropdown-menu-item{\n  font-size: initial;\n}\n.k-button-group .k-dropdown:first-child{\n  margin-left: 0;\n}\n.k-button-group .k-dropdown{\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-dropdown{\n  border-radius: 0;\n  vertical-align: top;\n}\n.k-button-group .k-dropdown:first-child{\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.k-button-group .k-dropdown:last-child{\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n/*DropDown*/\n.k-dropdown{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n}\n.k-dropdown i:last-child{\n  margin-left: 10px;\n  transition: transform .15s ease-out;\n}\n.k-dropdown i:first-child{\n  margin-left: 0;\n  margin-right: 6px;\n}\n.k-dropdown-menu{\n  margin: 1px 0 0;\n  padding: 5px 0 15px 0;\n  background: #fff;\n  border: 1px solid #ccc;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  overflow: hidden;\n  color: #666;\n}\n.k-dropdown-menu-item{\n  list-style: none;\n  position: relative;\n  padding: 6px 10px;\n  line-height: 1;\n  color: #888;\n  cursor: pointer;\n  transition: color .15s ease-out;\n}\n.k-dropdown-menu-item-icon{\n  padding-left: 2em;\n}\n.k-dropdown-menu-item-i{\n  position: absolute;\n  left: 10px;\n  height: 1em;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n.k-dropdown-menu-item:hover{\n  color: #666;\n}\n.k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{\n  height: auto;\n  transition: all .15s ease-out;\n}\n.k-dropdown-menu-enter, .k-dropdown-menu-leave-active{\n  height: 0;\n  padding: 0;\n  transform: rotateX(30deg);\n  opacity: 0;\n}\n/*Button*/\nbutton::-moz-focus-inner {\n  padding: 0;\n  border: none;\n  margin: 0;\n}\n.k-button{\n  position: relative;\n  display: inline-block;\n  outline: none;\n  font-weight: 400;\n  text-align: center;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  line-height: 1;\n  /*line-height: 1.5;*/\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n  transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n}\n.k-button-radius{\n  border-radius: 4px;\n}\n.k-button i:first-child{\n  margin-right: 6px;\n}\n.k-button i:last-child{\n  margin-right: 0px;\n}\n.k-button-mini{\n  padding: 2px 4px;\n}\n.k-button-small{\n  padding: 4px 8px;\n}\n.k-button-normal{\n  padding: 6px 14px;\n}\n.k-button-large{\n  padding: 8px 16px;\n}\n.k-button-default{\n  background: #fff;\n  color: #666;\n  border-color: #ccc;\n}\n.k-button-default:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-default:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-ghost{\n  color: #666;\n  background: none;\n  border-color: #ccc;\n}\n.k-button-ghost:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-ghost:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-dashed{\n  border: 1px dashed #ccc;\n  background: #fff;\n  color: #666;\n}\n.k-button-dashed:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-dashed:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-text{\n  background: transparent;\n  color: #20a0ff;\n  border-color: transparent;\n}\n.k-button-text:hover{\n  color: #4db3ff;\n}\n.k-button-text:active{\n  color: #3879D9;\n}\n.k-button-primary{\n  background: #20a0ff;\n  color: #fff;\n  border-color: #20a0ff;\n}\n.k-button-primary:hover{\n  border-color: #4db3ff;\n  background: #4db3ff;\n  color: #fff;\n}\n.k-button-primary:active{\n  border-color: #3879D9;\n  background: #3879D9;\n  color: #fff;\n}\n.k-button-success {\n  border-color: #13ce66;\n  background: #13ce66;\n  color: #fff;\n}\n.k-button-success:hover {\n  background: #42d885;\n  border-color: #42d885;\n}\n.k-button-success:active {\n  background: #42AE77;\n  border-color: #42AE77;\n}\n.k-button-warning {\n  border-color: #f7ba2a;\n  background: #f7ba2a;\n  color: #fff;\n}\n.k-button-warning:hover {\n  background: #f9c885;\n  border-color: #f9c885;\n}\n.k-button-warning:active {\n  background: #FF9900;\n  border-color: #FF9900;\n}\n.k-button-danger {\n  border-color: #ff4949;\n  background: #ff4949;\n  color: #fff;\n}\n.k-button-danger:hover {\n  background: #ff6d6d;\n  border-color: #ff6d6d;\n}\n.k-button-danger:active {\n  background: #cc3333;\n  border-color: #cc3333;\n}\n.k-button-info {\n  border-color: #50bfff;\n  background: #50bfff;\n  color: #fff;\n}\n.k-button-info:hover {\n  background: #73ccff;\n  border-color: #73ccff;\n}\n.k-button-info:active {\n  background: #20a0ff;\n  border-color: #20a0ff;\n}\n.k-button-disable{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:hover{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:active{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-circle{\n  border-radius: 50%;\n  padding: 0;\n  width: 2em;\n  height: 2em;\n}\n/*Switch*/\n.k-switch{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n  background: #e0e0e0;\n  cursor: pointer;\n  transition: all .35s ease-in ;\n}\n.k-switch-default {\n  width: 40px;\n  height: 20px;\n  border-radius: 20px;\n}\n.k-switch a{\n  display: block;\n  position: absolute;\n  top: 2px;\n  transition: all .35s ease-in-out;\n}\n.k-switch-disable a{\n  left: 2px;\n}\n.k-switch-enable a{\n  left: 22px;\n}\n.k-switch-enable {\n  background: #4db3ff;\n}\n.k-switch-circle{\n  width: 16px;\n  height: 16px;\n  background: #fff;\n  border-radius: 50%;\n}\n.k-switch-animate{\n  width: 24px;\n}\n.k-switch-status-disable{\n  cursor: not-allowed;\n}\n/*notification*/\n.k-notification{\n  position: relative;\n  font-size: 14px;\n  margin-top: 16px;\n  width: 360px;\n  height: auto;\n  border-radius: 3px;\n  border: 1px solid #c0ccda;\n  right: 4px;\n  padding: 12px 20px 12px 10px;\n  color: #666;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-notification-wrap{\n  position: fixed;\n  right: 0;\n  top: 60px;\n}\n.k-notification-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-notification p{\n  color: inherit;\n}\n.k-notification-title{\n  color: inherit;\n}\n.k-notification-left{\n  width: 72px;\n  margin-top: 16px;\n  height: 100%;\n  text-align: center;\n}\n.k-notification-left i{\n  font-size: 32px;\n  display: inline-block;\n}\n.k-notification-right{\n  width: 248px;\n}\n.k-notification-right h3{\n  padding-top: 6px;\n  font-size: 14px;\n  font-weight: bold;\n  margin: 0;\n}\n.k-notification-right i{\n  float: right;\n  cursor: pointer;\n}\n.k-notification-right p{\n  font-size: 13px;\n  margin: 0;\n  padding: 10px 0;\n  word-break: break-all;\n}\n.k-notification-left, .k-notification-right{\n  float: left;\n}\n.k-notification-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-notification-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-notification-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-notification-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border: 1px solid #faebcc;\n}\n.k-notification-fade-enter-active{\n  transition: all .2s linear;\n}\n.k-notification-fade-leave-active{\n  transition: all .25s linear;\n}\n.k-notification-fade-enter{\n  opacity: 0;\n  height: 0;\n  right: -360px;\n}\n.k-notification-fade-leave-active{\n  opacity: 0;\n  height: 0;\n  padding: 0;\n  border: none;\n  right: -360px;\n}\n/*Message*/\n.k-message-wrap{\n  position: fixed;\n  top: 20px;\n  z-index: 999999;\n  height: 0px;\n  width: 100%;\n  text-align: center;\n}\n.k-message{\n  display: inline-block;\n  top: 0;\n  border-radius: 4px;\n  padding: 6px 12px;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n}\n.k-message i{\n  margin-right: 8px;\n}\n.k-message-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-message-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-message-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-message-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border:1px solid #faebcc;\n}\n.k-message-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-message-close{\n  cursor: pointer;\n  margin-left: 12px;\n}\n.k-message-container{\n  position: absolute;\n  height: 0px;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n.k-animate-top-in-enter-active, .k-animate-top-in-leave-active{\n  transition: all .15s ease-out;\n}\n.k-animate-top-in-enter, .k-animate-top-in-leave-active{\n  margin-top: -30px;\n  opacity: 0;\n}\n/*Dialog*/\n.k-dialog-wrap{\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 99999;\n}\n.k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{\n  transition: all .2s ease;\n}\n.k-dialog-fade-in-enter, .k-dialog-fade-in-leave-active{\n  opacity: 0;\n}\n.k-dialog{\n  position: relative;\n  display: inline-block;\n  margin-top: 35px;\n  width: 400px;\n  background: #fff;\n  border-radius: 4px;\n  border: 1px solid #ccc;\n  padding: 20px 16px;\n  text-align: left;\n}\n.k-dialog h3{\n  font-size: 16px;\n  padding: 0;\n  padding-left: 10px;\n  margin: 0;\n  text-align: initial;\n  color: #333;\n}\n.k-dialog-close{\n  color: #666;\n  float: right;\n  margin-right: 10px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.k-dialog-content{\n  color: #555;\n  text-align: initial;\n  padding: 0;\n  margin: 0;\n  font-size: 14px;\n  text-indent: 2em;\n  padding: 22px 0 16px;\n}\n.k-dialog-enter-active, .k-dialog-leave-active{\n  transition: all .15s ease;\n}\n.k-dialog-enter, .k-dialog-leave-active{\n  margin-top: 0;\n  opacity: 0;\n}\n.k-dialog-button{\n  padding-top: 20px;\n  text-align: right;\n}\n", ""]);
 
 // exports
 
@@ -9442,26 +9491,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "show"
     }],
     staticClass: "k-dialog"
-  }, [_c('h3', [_vm._v("\n      " + _vm._s(this.$options.title || 'Dialog') + "\n      "), _c('i', {
+  }, [_c('h3', [_vm._v("\n      " + _vm._s(this.title) + "\n      "), _c('i', {
     staticClass: "fa fa-close k-dialog-close",
     on: {
       "click": _vm.close
     }
   })]), _vm._v(" "), _c('p', {
     staticClass: "k-dialog-content"
-  }, [_vm._v(_vm._s(this.$options.content || ''))]), _vm._v(" "), _c('div', {
-    staticClass: "k-dialog-button"
-  }, [_c('k-button', {
+  }, [_vm._v(_vm._s(this.content))]), _vm._v(" "), _c('div', {
+    staticClass: "k-dialog-button",
     on: {
-      "click": _vm.cancel
+      "click": function($event) {
+        $event.stopPropagation();
+      }
+    }
+  }, [_c('k-button', {
+    attrs: {
+      "loading": this.cancelLoading,
+      "size": "large"
+    },
+    on: {
+      "click": _vm._cancel
     }
   }, [_vm._v("取消")]), _vm._v(" "), _c('k-button', {
     attrs: {
-      "loading": _vm.loading,
+      "loading": this.sureLoading,
+      "size": "large",
       "type": "primary"
     },
     on: {
-      "click": _vm.sure
+      "click": _vm._sure
     }
   }, [_vm._v("确认")])], 1)])])
 },staticRenderFns: []}

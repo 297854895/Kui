@@ -1,28 +1,45 @@
 import Vue from 'vue';
 import kDialog from './Dialog.vue';
-const Dialogs = Vue.extend(kDialog);
 
 export default (options) => {
   const kdialog = Vue.component('k-dialog', {
+    components: {
+      'k-dialogs': kDialog
+    },
     data() {
       return {
-        show: false
-      }
-    },
-    watch: {
-      show(newValue) {
-        if (!newValue) return;
-        const _dialogs = new Dialogs(Object.assign({parent: this}, options)).$mount();
-        this.$nextTick(() => {
-          this.$refs.DialogWrap.appendChild(_dialogs.$el);
-        });
+        show: false,
+        cancelLoading: false,
+        sureLoading: false
       }
     },
     mounted () {
       this.show = true;
       this.$on('close-dialog', () => {
-        this.show = false;
+        setTimeout(() => {
+          this.show = false;
+        }, 50);
       });
+    },
+    methods: {
+      toggleLoading(data) {
+        if (!this.show) return;
+        const status = data.action === 'start' ? true : data.action === 'error' ? 'error' : false;
+        if (!status) {
+          this.$children[0].show = false;
+          setTimeout(() => {
+            this.show = false;
+          }, 50);
+          return;
+        }
+        if (status === 'error') {
+          this[`${data.type}Loading`] = false;
+          if (!data.error && typeof data.error !== 'function') return;
+          data.error();
+          return;
+        }
+        this[`${data.type}Loading`] = true;
+      }
     },
     render(h) {
       if (this.show) {
@@ -41,7 +58,15 @@ export default (options) => {
                   class: 'k-dialog-wrap',
                 },
                 ref: 'DialogWrap'
-              }
+              },
+              [
+                h(
+                  'k-dialogs',
+                  {
+                    props: Object.assign({sureLoading: this.sureLoading, cancelLoading: this.cancelLoading}, options)
+                  }
+                )
+              ]
             )
           ]
         )
@@ -52,4 +77,5 @@ export default (options) => {
   });
   const _dialog = new kdialog().$mount();
   document.querySelector('body').appendChild(_dialog.$el);
+  return _dialog;
 }
