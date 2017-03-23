@@ -347,7 +347,7 @@ button::-moz-focus-inner {
 }
 .k-button-text{
   background: transparent;
-  color: #20a0ff;
+  color: #666;
   border-color: transparent;
 }
 .k-button-text:hover{
@@ -771,19 +771,30 @@ button::-moz-focus-inner {
 .k-modal{
   position: relative;
   display: inline-block;
-  max-width: 600px;
+  /*max-width: 600px;*/
   max-height: 100%;
   background: #fff;
-  padding: 10px 16px 20px 16px;
+  padding: 18px 20px 20px 20px;
   text-align: left;
 }
+.k-modal-close {
+  position: relative;
+}
+.k-modal-close .k-modal-title{
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
 .k-modal-close .k-button{
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
 }
 .k-modal-close .k-button::before{
   font-family: Arial,"Helvetica CY","Nimbus Sans L",sans-serif!important;
   font-size: 24px;
-  font-weight: bold;
+  line-height: 14px;
   content: "\00d7";
   text-align: center;
 }
