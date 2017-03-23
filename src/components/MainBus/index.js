@@ -1,7 +1,7 @@
 import Vue from 'vue';
 const vueMainBus = new Vue();
 const MainBus = {};
-['closeAllMenu'].forEach((type)=>{
+['closeAllMenu', 'dialogEvent'].forEach((type)=>{
   MainBus[type] = (options, data) => {
     vueMainBus.$emit(options, data);
   };

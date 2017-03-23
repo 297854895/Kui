@@ -159,8 +159,6 @@
   margin-left: 0;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
 }
 .k-button-group .k-button:last-child{
   border-top-right-radius: inherit;
@@ -662,15 +660,28 @@ button::-moz-focus-inner {
   opacity: 0;
 }
 /*Dialog*/
-.k-dialog-wrap{
+.k-dialog-container{
   position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+.k-dialog-radius .k-dialog{
+  border-radius: 4px;
+}
+.k-dialog-container-show{
+  width: 100%;
+  height: 100%;
+}
+.k-dialog-wrap{
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
 }
 .k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{
   transition: all .2s ease;
@@ -684,7 +695,6 @@ button::-moz-focus-inner {
   margin-top: 35px;
   width: 400px;
   background: #fff;
-  border-radius: 4px;
   border: 1px solid #ccc;
   padding: 20px 16px;
   text-align: left;
@@ -723,4 +733,57 @@ button::-moz-focus-inner {
 .k-dialog-button{
   padding-top: 20px;
   text-align: right;
+}
+/*Modal*/
+.k-modal-container{
+  position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /*-webkit-filter: blur(3px);
+  filter: blur(3px);*/
+}
+.k-modal-container-show{
+  width: 100%;
+  height: 100%;
+  padding: 35px 0;
+  box-sizing: border-box;
+}
+.k-modal-enter-active, .k-modal-leave-active{
+  transition: all .15s ease;
+}
+.k-modal-enter, .k-modal-leave-active{
+  opacity: 0;
+}
+.k-modal-wrap-enter-active, .k-modal-wrap-leave-active{
+  transition: all .2s ease-out;
+}
+.k-modal-wrap-enter, .k-modal-wrap-leave-active{
+  opacity: 0;
+  transform: scale(.9);
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+.k-modal{
+  position: relative;
+  display: inline-block;
+  max-width: 600px;
+  max-height: 100%;
+  background: #fff;
+  padding: 10px 16px 20px 16px;
+  text-align: left;
+}
+.k-modal-close .k-button{
+  float: right;
+}
+.k-modal-close .k-button::before{
+  font-family: Arial,"Helvetica CY","Nimbus Sans L",sans-serif!important;
+  font-size: 24px;
+  font-weight: bold;
+  content: "\00d7";
+  text-align: center;
 }

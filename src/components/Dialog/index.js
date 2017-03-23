@@ -1,7 +1,13 @@
 import Vue from 'vue';
 import kDialog from './Dialog.vue';
+import MainBus from '../MainBus/index.js';
 
 export default (options) => {
+  let container = document.querySelector('.k-dialog-container');
+  if (container) {
+    MainBus.dialogEvent('dialogEvent', options);
+    return;
+  }
   const kdialog = Vue.component('k-dialog', {
     components: {
       'k-dialogs': kDialog
@@ -9,8 +15,10 @@ export default (options) => {
     data() {
       return {
         show: false,
+        options: options,
         cancelLoading: false,
-        sureLoading: false
+        sureLoading: false,
+        container: ''
       }
     },
     mounted () {
@@ -20,25 +28,51 @@ export default (options) => {
           this.show = false;
         }, 50);
       });
+      MainBus.listen.$on('dialogEvent', (event) => {
+        if (event.type === 'loading') {
+          this.toggleLoading(event);
+          return;
+        }
+        this.initData(event);
+        container.className = `k-dialog-container k-dialog-container-show ${event.radius === false ? '' : 'k-dialog-radius'}`;
+        this.show = true;
+      });
     },
     methods: {
+      close() {
+        this.$children[0].show = false;
+        setTimeout(() => {
+          this.show = false;
+        }, 50);
+      },
+      initData(data) {
+        this.cancelLoading = false;
+        this.sureLoading = false;
+        this.options = data;
+      },
       toggleLoading(data) {
         if (!this.show) return;
         const status = data.action === 'start' ? true : data.action === 'error' ? 'error' : false;
         if (!status) {
-          this.$children[0].show = false;
-          setTimeout(() => {
-            this.show = false;
-          }, 50);
+          this.close();
           return;
         }
         if (status === 'error') {
-          this[`${data.type}Loading`] = false;
+          this[`${data.button}Loading`] = false;
+          if (data.close) {
+            this.close();
+          }
           if (!data.error && typeof data.error !== 'function') return;
           data.error();
           return;
         }
-        this[`${data.type}Loading`] = true;
+        this[`${data.button}Loading`] = true;
+      },
+      leave() {
+        this.container = this.$el.parentNode;
+      },
+      afterLeave() {
+        this.container.className = 'k-dialog-container';
       }
     },
     render(h) {
@@ -49,6 +83,10 @@ export default (options) => {
             attrs: {
               name: 'k-dialog-fade-in'
             },
+            on: {
+              'leave': this.leave,
+              'after-leave': this.afterLeave
+            }
           },
           [
             h(
@@ -57,13 +95,15 @@ export default (options) => {
                 attrs: {
                   class: 'k-dialog-wrap',
                 },
-                ref: 'DialogWrap'
+                on: {
+                  click: this.close
+                }
               },
               [
                 h(
                   'k-dialogs',
                   {
-                    props: Object.assign({sureLoading: this.sureLoading, cancelLoading: this.cancelLoading}, options)
+                    props: Object.assign({sureLoading: this.sureLoading, cancelLoading: this.cancelLoading}, this.options)
                   }
                 )
               ]
@@ -76,6 +116,8 @@ export default (options) => {
     }
   });
   const _dialog = new kdialog().$mount();
-  document.querySelector('body').appendChild(_dialog.$el);
-  return _dialog;
+  container = document.createElement('div');
+  container.className = `k-dialog-container k-dialog-container-show ${options.radius === false ? '' : 'k-dialog-radius'}`;
+  container.appendChild(_dialog.$el);
+  document.querySelector('body').appendChild(container);
 }

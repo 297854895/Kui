@@ -10,11 +10,11 @@
       <p class="k-dialog-content">{{this.content}}</p>
       <div class="k-dialog-button" @click.stop>
         <k-button
-          :loading="this.cancelLoading"
+          :loading="cancelLoading"
           size="large"
           @click="_cancel">取消</k-button>
         <k-button
-          :loading="this.sureLoading"
+          :loading="sureLoading"
           size="large"
           type="primary"
           @click="_sure">确认</k-button>
@@ -56,7 +56,7 @@
     },
     data() {
       return {
-        show: false
+        show: false,
       }
     },
     mounted() {
