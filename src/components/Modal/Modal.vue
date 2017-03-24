@@ -6,10 +6,11 @@
       @click.stop="close_">
       <transition name="k-modal-wrap">
         <div
-          v-show="modalStatus"
+          v-show="modalDOM"
           class="k-modal"
-          @click.stop="">
-          <div class="k-modal-close" v-if="title !== false">
+          @click.stop=""
+          :style="`${cssStyle}`">
+          <div class="k-modal-close" v-if="title">
             <h3 class="k-modal-title">{{title}}</h3>
             <k-button
               @click="close_"
@@ -35,30 +36,33 @@
         default: false
       },
       title: {
-        type: String || Boolean,
+        type: String,
         default: ''
       },
       close: {
         type: Function
+      },
+      cssStyle: {
+        type: String,
+        default: ''
       }
     },
     data() {
       return {
-        modalStatus: false
+        modalDOM: false
       }
     },
     watch: {
       show(newValue) {
         if (!newValue) return;
-        this.modalStatus = newValue;
-      }
+        this.modalDOM = newValue;
+      },
     },
     methods: {
       close_() {
-        if (this.close && typeof this.close === 'function') {
-          this.modalStatus = false;
-          this.close();
-        }
+        if (!this.close || typeof this.close !== 'function') return;
+        this.modalDOM = false;
+        this.close();
       }
     }
   }

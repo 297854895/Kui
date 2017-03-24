@@ -684,7 +684,7 @@ button::-moz-focus-inner {
   background: rgba(0, 0, 0, 0.5);
 }
 .k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{
-  transition: all .2s ease;
+  transition: all .15s ease;
 }
 .k-dialog-fade-in-enter, .k-dialog-fade-in-leave-active{
   opacity: 0;
@@ -724,11 +724,13 @@ button::-moz-focus-inner {
   padding: 22px 0 16px;
 }
 .k-dialog-enter-active, .k-dialog-leave-active{
-  transition: all .15s ease;
+  transition: all .2s ease;
 }
 .k-dialog-enter, .k-dialog-leave-active{
   margin-top: 0;
   opacity: 0;
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
 }
 .k-dialog-button{
   padding-top: 20px;
@@ -774,15 +776,17 @@ button::-moz-focus-inner {
   /*max-width: 600px;*/
   max-height: 100%;
   background: #fff;
-  padding: 18px 20px 20px 20px;
+  padding: 18px 20px 20px;
   text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2)
 }
 .k-modal-close {
   position: relative;
 }
 .k-modal-close .k-modal-title{
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
+  color: #333;
   font-weight: bold;
 }
 .k-modal-close .k-button{
