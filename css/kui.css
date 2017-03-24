@@ -920,3 +920,166 @@ button::-moz-focus-inner {
   -webkit-filter: blur(3px);
   filter: blur(3px);
 }
+/*tree*/
+.k-tree{
+  display: block;
+  width: 100%;
+  color: inherit;
+}
+.k-tree ul{
+  margin: 0;
+  padding: 0;
+}
+.k-tree li{
+  padding: 0 1em;
+  list-style: none;
+}
+.k-tree-each{
+  padding: 6px 0 6px 38px;
+  position: relative;
+  display: block;
+}
+.k-tree-arr{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .15s ease-out;
+}
+.k-tree-check{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 18px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #afafaf;
+  border-radius: 2px;
+  background: #fff;
+  cursor: pointer;
+  transition: background-color .15s ease-out;
+}
+.k-tree-default{
+  color: #666;
+}
+.k-tree-default .k-tree-check{
+  color: #888;
+}
+.k-tree-default .k-tree-arr{
+  color: #888;
+}
+.k-tree-primary{
+  color: #666;
+}
+.k-tree-primary .k-tree-check-active{
+  border: 1px solid #20a0ff;
+  background: #20a0ff;
+}
+.k-tree-primary .k-tree-check{
+  color: #fff;
+}
+.k-tree-primary .k-tree-arr{
+  color: #888;
+}
+.k-tree-check i {
+  font-size: 10px;
+  height: 12px;
+  width: 12px;
+  text-align: center;
+  line-height: 12px;
+  position: absolute;
+  top: 1px;
+}
+.k-tree-close{
+  transform: rotate(90deg);
+}
+.k-tree-no-check .k-tree-each{
+  padding: 6px 0 6px 22px;
+}
+.k-tree-node-cursor{
+  cursor: pointer;
+}
+/*CheckBox*/
+.k-check-box{
+  display: block;
+  color: #666;
+}
+.k-check-box-check-wrap{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  position: relative;
+  border-color: inherit;
+}
+.k-check-box-check{
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.175);
+  box-shadow: 0 1px 2px rgba(0,0,0,.175);
+}
+.k-check-box-default .k-check-box-check{
+  background-color: #eee;
+}
+.k-check-box-check i{
+  display: block;
+  font-size: 10px;
+}
+.k-check-box-check-radio{
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-color: inherit;
+}
+.k-check-box-check-mut{
+  border: 1px solid transparent;
+  border-color: inherit;
+  border-radius: 2px;
+  color: transparent;
+}
+.k-check-box-radio-circle{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  transition: background-color .15s ease-out;
+}
+.k-check-box-default{
+  border-color: #c5c5c5;
+}
+.k-check-box-default .k-check-box-check-radio-active{
+  background-color: #666;
+}
+.k-check-box-default .k-check-box-check-mut-active{
+  color: #666;
+}
+.k-check-box-default i{
+  transition: color .15s ease;
+  color: inherit;
+}
