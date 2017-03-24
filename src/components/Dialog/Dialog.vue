@@ -3,9 +3,11 @@
     <div
       class="k-dialog"
       v-show="show">
-      <h3>
+      <h3 class="k-dialog-title">
         {{this.title}}
-        <i class="fa fa-close k-dialog-close" @click="close"></i>
+        <k-button
+          @click="close"
+          type="text"></k-button>
       </h3>
       <p class="k-dialog-content">{{this.content}}</p>
       <div class="k-dialog-button" @click.stop>

@@ -7,6 +7,7 @@ import DropDown from './components/DropDown/DropDown.vue';
 import DropDownItem from './components/DropDown/DropDownItem.vue';
 import Layout from './components/Layout/Layout.vue';
 import Modal from './components/Modal/Modal.vue';
+import Popover from './components/Popover/Popover.vue';
 import Row from './components/Row/Row.vue';
 import Switch from './components/Switch/Switch.vue';
 
@@ -23,6 +24,7 @@ exports.install = (Vue, options) => {
   Vue.component(DropDown.name, DropDown);
   Vue.component(DropDownItem.name, DropDownItem);
   Vue.component(Layout.name, Layout);
+  Vue.component(Popover.name, Popover);
   Vue.component(Row.name, Row);
   Vue.component(Switch.name, Switch);
   Vue.component(Modal.name, Modal);

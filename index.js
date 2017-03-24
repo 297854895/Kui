@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 98);
+/******/ 	return __webpack_require__(__webpack_require__.s = 101);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -6883,7 +6883,7 @@ setTimeout(function () {
 
 /* harmony default export */ __webpack_exports__["a"] = Vue$2;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(79), __webpack_require__(97)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(81), __webpack_require__(100)))
 
 /***/ }),
 /* 2 */
@@ -6908,9 +6908,9 @@ MainBus.listen = vueMainBus;
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(30),
+  __webpack_require__(31),
   /* template */
-  __webpack_require__(94),
+  __webpack_require__(97),
   /* scopeId */
   null,
   /* cssModules */
@@ -6940,7 +6940,7 @@ module.exports = Component.exports
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(47), __esModule: true };
+module.exports = { "default": __webpack_require__(49), __esModule: true };
 
 /***/ }),
 /* 5 */
@@ -6957,8 +6957,8 @@ module.exports = !__webpack_require__(7)(function(){
 
 var global    = __webpack_require__(8)
   , core      = __webpack_require__(9)
-  , ctx       = __webpack_require__(53)
-  , hide      = __webpack_require__(57)
+  , ctx       = __webpack_require__(55)
+  , hide      = __webpack_require__(59)
   , PROTOTYPE = 'prototype';
 
 var $export = function(type, name, source){
@@ -7068,7 +7068,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(52);
+var cof = __webpack_require__(54);
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
@@ -7077,9 +7077,9 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject       = __webpack_require__(50)
-  , IE8_DOM_DEFINE = __webpack_require__(58)
-  , toPrimitive    = __webpack_require__(72)
+var anObject       = __webpack_require__(52)
+  , IE8_DOM_DEFINE = __webpack_require__(60)
+  , toPrimitive    = __webpack_require__(74)
   , dP             = Object.defineProperty;
 
 exports.f = __webpack_require__(5) ? Object.defineProperty : function defineProperty(O, P, Attributes){
@@ -7145,7 +7145,7 @@ module.exports = function(it){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dialog_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dialog_vue__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Dialog_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MainBus_index_js__ = __webpack_require__(2);
 
@@ -7271,7 +7271,7 @@ module.exports = function(it){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Message_vue__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Message_vue__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Message_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Message_vue__);
 
 
@@ -7317,7 +7317,7 @@ var Message = {};
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Notification_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Notification_vue__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Notification_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Notification_vue__);
 
 
@@ -7362,10 +7362,10 @@ var Notification = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(77);
+var content = __webpack_require__(79);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(80)(content, {});
+var update = __webpack_require__(82)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -7387,9 +7387,9 @@ if(false) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(31),
+  __webpack_require__(32),
   /* template */
-  __webpack_require__(86),
+  __webpack_require__(88),
   /* scopeId */
   null,
   /* cssModules */
@@ -7421,9 +7421,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(32),
+  __webpack_require__(33),
   /* template */
-  __webpack_require__(95),
+  __webpack_require__(98),
   /* scopeId */
   null,
   /* cssModules */
@@ -7455,9 +7455,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(34),
+  __webpack_require__(35),
   /* template */
-  __webpack_require__(87),
+  __webpack_require__(89),
   /* scopeId */
   null,
   /* cssModules */
@@ -7489,9 +7489,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(35),
+  __webpack_require__(36),
   /* template */
-  __webpack_require__(93),
+  __webpack_require__(95),
   /* scopeId */
   null,
   /* cssModules */
@@ -7523,9 +7523,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(36),
+  __webpack_require__(37),
   /* template */
-  __webpack_require__(90),
+  __webpack_require__(92),
   /* scopeId */
   null,
   /* cssModules */
@@ -7557,9 +7557,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(38),
+  __webpack_require__(39),
   /* template */
-  __webpack_require__(96),
+  __webpack_require__(99),
   /* scopeId */
   null,
   /* cssModules */
@@ -7591,9 +7591,43 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(40),
+  __webpack_require__(41),
   /* template */
-  __webpack_require__(89),
+  __webpack_require__(96),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/zkc/dev/kuidev/kui/src/components/Popover/Popover.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Popover.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8790ab2a", Component.options)
+  } else {
+    hotAPI.reload("data-v-8790ab2a", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(42),
+  /* template */
+  __webpack_require__(91),
   /* scopeId */
   null,
   /* cssModules */
@@ -7620,14 +7654,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(41),
+  __webpack_require__(43),
   /* template */
-  __webpack_require__(92),
+  __webpack_require__(94),
   /* scopeId */
   null,
   /* cssModules */
@@ -7654,7 +7688,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7740,7 +7774,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7758,7 +7792,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7788,7 +7822,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7860,12 +7894,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Button_Button_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Button_Button_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Button_Button_vue__);
@@ -7990,7 +8024,7 @@ var _props;
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8008,7 +8042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8020,12 +8054,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_parse_int__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_parse_int__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_parse_int__);
 
 
@@ -8078,7 +8112,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8133,12 +8167,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
 
 
@@ -8200,7 +8234,144 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 40 */
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'k-popover',
+  props: {
+    direction: {
+      type: String,
+      default: 'top'
+    },
+    eventType: {
+      type: String,
+      default: 'hover'
+    },
+    cssStyle: {
+      type: String,
+      default: ''
+    }
+  },
+  updated: function updated() {
+    if (!this.show) return;
+    var direction = this.direction;
+    var PopoverDOM = this.$refs.PopoverDOM;
+    var Popover = this.$refs.Popover;
+    var PopoverHeight = Popover.offsetHeight;
+    var PopoverWidth = Popover.offsetWidth;
+    var PopoverDOMHeight = PopoverDOM.offsetHeight;
+    var PopoverDOMWidth = PopoverDOM.offsetWidth;
+    var viewInfo = this.getViewportSize();
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft;
+    var offsetLeft = Popover.offsetLeft - scrollLeft;
+    var offsetTop = Popover.offsetTop - scrollTop;
+    var offsetRight = viewInfo.width - offsetLeft - PopoverWidth;
+    var offsetBottom = viewInfo.height - offsetTop - PopoverHeight;
+    var num = direction === 'top' || direction === 'bottom' ? PopoverHeight : PopoverWidth;
+    num += direction === 'top' || direction === 'bottom' ? PopoverDOMHeight : 0;
+    var marginLeft = 0;
+    var marginTop = 0;
+    switch (direction) {
+      case 'right':
+        marginLeft = num + 10;
+        marginTop = -((PopoverHeight + PopoverDOMHeight) / 2);
+        break;
+      case 'left':
+        marginLeft = -(PopoverDOMWidth + 10);
+        marginTop = -((PopoverHeight + PopoverDOMHeight) / 2);
+        break;
+      case 'bottom':
+        marginTop = 8;
+        break;
+      default:
+        marginTop = -(num + 8);
+    }
+    switch (this.dire) {
+      case 'right':
+        if (offsetRight < marginLeft) {
+          marginLeft = -(PopoverDOMWidth + 10);
+          PopoverDOM.className = PopoverDOM.className.replace('right', 'left');
+        }
+        break;
+      case 'bottom':
+        if (offsetBottom < marginTop + PopoverDOMHeight) {
+          marginTop = -(num + 8);
+          PopoverDOM.className = PopoverDOM.className.replace('bottom', 'top');
+        }
+        break;
+      case 'left':
+        console.log(offsetLeft, marginLeft);
+        if (offsetLeft < Math.abs(marginLeft)) {
+          marginLeft = num + 10;
+          PopoverDOM.className = PopoverDOM.className.replace('left', 'right');
+        }
+        break;
+      default:
+        if (offsetTop < Math.abs(marginTop)) {
+          marginTop = 8;
+          PopoverDOM.className = PopoverDOM.className.replace('top', 'bottom');
+        }
+    }
+    PopoverDOM.style.marginTop = marginTop + 'px';
+    if (!marginLeft) return;
+    PopoverDOM.style.marginLeft = marginLeft + 'px';
+  },
+  data: function data() {
+    return {
+      dire: this.direction,
+      show: false,
+      showTimer: null
+    };
+  },
+
+  methods: {
+    getViewportSize: function getViewportSize() {
+      return {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight
+      };
+    },
+    mouseenter: function mouseenter() {
+      var _this = this;
+
+      if (this.eventType === 'click') return;
+      if (this.show === true) {
+        if (this.showTimer) {
+          clearTimeout(this.showTimer);
+          this.showTimer = null;
+          this.show = true;
+          return;
+        }
+        return;
+      }
+      setTimeout(function () {
+        _this.show = true;
+      }, 50);
+    },
+    mouseleave: function mouseleave() {
+      var _this2 = this;
+
+      if (this.eventType === 'click') return;
+      this.showTimer = setTimeout(function () {
+        _this2.show = false;
+      }, 200);
+      return;
+    },
+    click: function click() {
+      if (this.eventType === 'hover') return;
+      this.show = !this.show;
+    }
+  }
+};
+
+/***/ }),
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8218,7 +8389,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8270,19 +8441,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(46), __esModule: true };
-
-/***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(48), __esModule: true };
 
 /***/ }),
-/* 44 */
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(50), __esModule: true };
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8290,7 +8461,7 @@ module.exports = { "default": __webpack_require__(48), __esModule: true };
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(43);
+var _defineProperty = __webpack_require__(45);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -8312,7 +8483,7 @@ exports.default = function (obj, key, value) {
 };
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8341,31 +8512,31 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(74);
-module.exports = parseInt;
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(75);
-module.exports = __webpack_require__(9).Object.assign;
-
-/***/ }),
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(76);
+module.exports = parseInt;
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(77);
+module.exports = __webpack_require__(9).Object.assign;
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(78);
 var $Object = __webpack_require__(9).Object;
 module.exports = function defineProperty(it, key, desc){
   return $Object.defineProperty(it, key, desc);
 };
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = function(it){
@@ -8374,7 +8545,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(11);
@@ -8384,14 +8555,14 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(16)
-  , toLength  = __webpack_require__(70)
-  , toIndex   = __webpack_require__(69);
+  , toLength  = __webpack_require__(72)
+  , toIndex   = __webpack_require__(71);
 module.exports = function(IS_INCLUDES){
   return function($this, el, fromIndex){
     var O      = toIObject($this)
@@ -8410,7 +8581,7 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -8420,11 +8591,11 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(49);
+var aFunction = __webpack_require__(51);
 module.exports = function(fn, that, length){
   aFunction(fn);
   if(that === undefined)return fn;
@@ -8445,7 +8616,7 @@ module.exports = function(fn, that, length){
 };
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(11)
@@ -8457,7 +8628,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -8466,7 +8637,7 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -8475,11 +8646,11 @@ module.exports = function(it, key){
 };
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(13)
-  , createDesc = __webpack_require__(65);
+  , createDesc = __webpack_require__(67);
 module.exports = __webpack_require__(5) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -8488,24 +8659,24 @@ module.exports = __webpack_require__(5) ? function(object, key, value){
 };
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(5) && !__webpack_require__(7)(function(){
-  return Object.defineProperty(__webpack_require__(54)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+  return Object.defineProperty(__webpack_require__(56)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys  = __webpack_require__(62)
-  , gOPS     = __webpack_require__(60)
-  , pIE      = __webpack_require__(63)
-  , toObject = __webpack_require__(71)
+var getKeys  = __webpack_require__(64)
+  , gOPS     = __webpack_require__(62)
+  , pIE      = __webpack_require__(65)
+  , toObject = __webpack_require__(73)
   , IObject  = __webpack_require__(12)
   , $assign  = Object.assign;
 
@@ -8535,19 +8706,19 @@ module.exports = !$assign || __webpack_require__(7)(function(){
 } : $assign;
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has          = __webpack_require__(56)
+var has          = __webpack_require__(58)
   , toIObject    = __webpack_require__(16)
-  , arrayIndexOf = __webpack_require__(51)(false)
-  , IE_PROTO     = __webpack_require__(66)('IE_PROTO');
+  , arrayIndexOf = __webpack_require__(53)(false)
+  , IE_PROTO     = __webpack_require__(68)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -8563,29 +8734,29 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(61)
-  , enumBugKeys = __webpack_require__(55);
+var $keys       = __webpack_require__(63)
+  , enumBugKeys = __webpack_require__(57);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
 };
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(8).parseInt
-  , $trim     = __webpack_require__(68).trim
+  , $trim     = __webpack_require__(70).trim
   , ws        = __webpack_require__(14)
   , hex       = /^[\-+]?0[xX]/;
 
@@ -8595,7 +8766,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = function(bitmap, value){
@@ -8608,17 +8779,17 @@ module.exports = function(bitmap, value){
 };
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(67)('keys')
-  , uid    = __webpack_require__(73);
+var shared = __webpack_require__(69)('keys')
+  , uid    = __webpack_require__(75);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(8)
@@ -8629,7 +8800,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(6)
@@ -8664,7 +8835,7 @@ var trim = exporter.trim = function(string, TYPE){
 module.exports = exporter;
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(15)
@@ -8676,7 +8847,7 @@ module.exports = function(index, length){
 };
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -8687,7 +8858,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -8697,7 +8868,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -8714,7 +8885,7 @@ module.exports = function(it, S){
 };
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports) {
 
 var id = 0
@@ -8724,25 +8895,25 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(6)
-  , $parseInt = __webpack_require__(64);
+  , $parseInt = __webpack_require__(66);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(6);
 
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(59)});
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(61)});
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(6);
@@ -8750,21 +8921,21 @@ var $export = __webpack_require__(6);
 $export($export.S + $export.F * !__webpack_require__(5), 'Object', {defineProperty: __webpack_require__(13).f});
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(78)();
+exports = module.exports = __webpack_require__(80)();
 // imports
 
 
 // module
-exports.push([module.i, "/*common*/\n.k-absolute-menu{\n  position: absolute;\n  margin-top: 2px;\n  min-width: 100%;\n  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  z-index: 9999;\n}\n.k-border-box{\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-clear-float{\n  clear: both;\n}\n/*Grid*/\n.k-col{\n  position: relative;\n  float: left;\n}\n.k-row{\n  width: 100%;\n  position: relative;\n  height: auto;\n  clear: both;\n}\n.k-col-0{\n  width: 0%;\n}\n.k-col-1{\n  width: 8.333333333%\n}\n.k-col-2{\n  width: 16.666666667%\n}\n.k-col-3{\n  width: 25%\n}\n.k-col-4{\n  width: 33.333333333%\n}\n.k-col-5{\n  width: 41.666666667%\n}\n.k-col-6{\n  width: 50%\n}\n.k-col-7{\n  width: 58.3333333333%\n}\n.k-col-8{\n  width: 66.666666667%\n}\n.k-col-9{\n  width: 75%\n}\n.k-col-10{\n  width: 83.3333333333%\n}\n.k-col-11{\n  width: 91.666666667%\n}\n.k-col-12{\n  width: 100%\n}\n.k-col-right-1{\n  margin-right: 8.333333333%\n}\n.k-col-right-2{\n  margin-right: 16.666666667%\n}\n.k-col-right-3{\n  margin-right: 25%\n}\n.k-col-right-4{\n  margin-right: 33.333333333%\n}\n.k-col-right-5{\n  margin-right: 41.666666667%\n}\n.k-col-right-6{\n  margin-right: 50%\n}\n.k-col-right-7{\n  margin-right: 58.3333333333%\n}\n.k-col-right-8{\n  margin-right: 66.666666667%\n}\n.k-col-right-9{\n  margin-right: 75%\n}\n.k-col-right-10{\n  margin-right: 83.3333333333%\n}\n.k-col-right-11{\n  margin-right: 91.666666667%\n}\n.k-col-right-12{\n  margin-right: 100%\n}\n.k-col-left-1{\n  margin-left: 8.333333333%\n}\n.k-col-left-2{\n  margin-left: 16.666666667%\n}\n.k-col-left-3{\n  margin-left: 25%\n}\n.k-col-left-4{\n  margin-left: 33.333333333%\n}\n.k-col-left-5{\n  margin-left: 41.666666667%\n}\n.k-col-left-6{\n  margin-left: 50%\n}\n.k-col-left-7{\n  margin-left: 58.3333333333%\n}\n.k-col-left-8{\n  margin-left: 66.666666667%\n}\n.k-col-left-9{\n  margin-left: 75%\n}\n.k-col-left-10{\n  margin-left: 83.3333333333%\n}\n.k-col-left-11{\n  margin-left: 91.666666667%\n}\n.k-col-left-12{\n  margin-left: 100%\n}\n/*ButtonGroup*/\n.k-button-group{\n  font-size: 0px;\n  display: inline-table;\n  position: relative;\n}\n.k-button-group-radius{\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.k-button-group .k-button{\n  border-radius: 0;\n  margin-left: -1px;\n}\n.k-button-group .k-button:first-child{\n  margin-left: 0;\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-button:last-child{\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:hover{\n  z-index: 99;\n}\n.k-button-group .k-button-circle{\n  padding: auto;\n}\n.k-button-group .k-dropdown{\n  margin-left: -1px;\n}\n.k-button-group .k-dropdown-menu-item{\n  font-size: initial;\n}\n.k-button-group .k-dropdown:first-child{\n  margin-left: 0;\n}\n.k-button-group .k-dropdown{\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-dropdown{\n  border-radius: 0;\n  vertical-align: top;\n}\n.k-button-group .k-dropdown:first-child{\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.k-button-group .k-dropdown:last-child{\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n/*DropDown*/\n.k-dropdown{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n}\n.k-dropdown i:last-child{\n  margin-left: 10px;\n  transition: transform .15s ease-out;\n}\n.k-dropdown i:first-child{\n  margin-left: 0;\n  margin-right: 6px;\n}\n.k-dropdown-menu{\n  margin: 1px 0 0;\n  padding: 5px 0 15px 0;\n  background: #fff;\n  border: 1px solid #ccc;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  overflow: hidden;\n  color: #666;\n}\n.k-dropdown-menu-item{\n  list-style: none;\n  position: relative;\n  padding: 6px 10px;\n  line-height: 1;\n  color: #888;\n  cursor: pointer;\n  transition: color .15s ease-out;\n}\n.k-dropdown-menu-item-icon{\n  padding-left: 2em;\n}\n.k-dropdown-menu-item-i{\n  position: absolute;\n  left: 10px;\n  height: 1em;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n.k-dropdown-menu-item:hover{\n  color: #666;\n}\n.k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{\n  height: auto;\n  transition: all .15s ease-out;\n}\n.k-dropdown-menu-enter, .k-dropdown-menu-leave-active{\n  height: 0;\n  padding: 0;\n  transform: rotateX(30deg);\n  opacity: 0;\n}\n/*Button*/\nbutton::-moz-focus-inner {\n  padding: 0;\n  border: none;\n  margin: 0;\n}\n.k-button{\n  position: relative;\n  display: inline-block;\n  outline: none;\n  font-weight: 400;\n  text-align: center;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  line-height: 1;\n  /*line-height: 1.5;*/\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n  transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n}\n.k-button-radius{\n  border-radius: 4px;\n}\n.k-button i:first-child{\n  margin-right: 6px;\n}\n.k-button i:last-child{\n  margin-right: 0px;\n}\n.k-button-mini{\n  padding: 2px 4px;\n}\n.k-button-small{\n  padding: 4px 8px;\n}\n.k-button-normal{\n  padding: 6px 14px;\n}\n.k-button-large{\n  padding: 8px 16px;\n}\n.k-button-default{\n  background: #fff;\n  color: #666;\n  border-color: #ccc;\n}\n.k-button-default:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-default:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-ghost{\n  color: #666;\n  background: none;\n  border-color: #ccc;\n}\n.k-button-ghost:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-ghost:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-dashed{\n  border: 1px dashed #ccc;\n  background: #fff;\n  color: #666;\n}\n.k-button-dashed:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-dashed:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-text{\n  background: transparent;\n  color: #666;\n  border-color: transparent;\n}\n.k-button-text:hover{\n  color: #4db3ff;\n}\n.k-button-text:active{\n  color: #3879D9;\n}\n.k-button-primary{\n  background: #20a0ff;\n  color: #fff;\n  border-color: #20a0ff;\n}\n.k-button-primary:hover{\n  border-color: #4db3ff;\n  background: #4db3ff;\n  color: #fff;\n}\n.k-button-primary:active{\n  border-color: #3879D9;\n  background: #3879D9;\n  color: #fff;\n}\n.k-button-success {\n  border-color: #13ce66;\n  background: #13ce66;\n  color: #fff;\n}\n.k-button-success:hover {\n  background: #42d885;\n  border-color: #42d885;\n}\n.k-button-success:active {\n  background: #42AE77;\n  border-color: #42AE77;\n}\n.k-button-warning {\n  border-color: #f7ba2a;\n  background: #f7ba2a;\n  color: #fff;\n}\n.k-button-warning:hover {\n  background: #f9c885;\n  border-color: #f9c885;\n}\n.k-button-warning:active {\n  background: #FF9900;\n  border-color: #FF9900;\n}\n.k-button-danger {\n  border-color: #ff4949;\n  background: #ff4949;\n  color: #fff;\n}\n.k-button-danger:hover {\n  background: #ff6d6d;\n  border-color: #ff6d6d;\n}\n.k-button-danger:active {\n  background: #cc3333;\n  border-color: #cc3333;\n}\n.k-button-info {\n  border-color: #50bfff;\n  background: #50bfff;\n  color: #fff;\n}\n.k-button-info:hover {\n  background: #73ccff;\n  border-color: #73ccff;\n}\n.k-button-info:active {\n  background: #20a0ff;\n  border-color: #20a0ff;\n}\n.k-button-disable{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:hover{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:active{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-circle{\n  border-radius: 50%;\n  padding: 0;\n  width: 2em;\n  height: 2em;\n}\n/*Switch*/\n.k-switch{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n  background: #e0e0e0;\n  cursor: pointer;\n  transition: all .35s ease-in ;\n}\n.k-switch-default {\n  width: 40px;\n  height: 20px;\n  border-radius: 20px;\n}\n.k-switch a{\n  display: block;\n  position: absolute;\n  top: 2px;\n  transition: all .35s ease-in-out;\n}\n.k-switch-disable a{\n  left: 2px;\n}\n.k-switch-enable a{\n  left: 22px;\n}\n.k-switch-enable {\n  background: #4db3ff;\n}\n.k-switch-circle{\n  width: 16px;\n  height: 16px;\n  background: #fff;\n  border-radius: 50%;\n}\n.k-switch-animate{\n  width: 24px;\n}\n.k-switch-status-disable{\n  cursor: not-allowed;\n}\n/*notification*/\n.k-notification{\n  position: relative;\n  font-size: 14px;\n  margin-top: 16px;\n  width: 360px;\n  height: auto;\n  border-radius: 3px;\n  border: 1px solid #c0ccda;\n  right: 4px;\n  padding: 12px 20px 12px 10px;\n  color: #666;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-notification-wrap{\n  position: fixed;\n  right: 0;\n  top: 60px;\n}\n.k-notification-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-notification p{\n  color: inherit;\n}\n.k-notification-title{\n  color: inherit;\n}\n.k-notification-left{\n  width: 72px;\n  margin-top: 16px;\n  height: 100%;\n  text-align: center;\n}\n.k-notification-left i{\n  font-size: 32px;\n  display: inline-block;\n}\n.k-notification-right{\n  width: 248px;\n}\n.k-notification-right h3{\n  padding-top: 6px;\n  font-size: 14px;\n  font-weight: bold;\n  margin: 0;\n}\n.k-notification-right i{\n  float: right;\n  cursor: pointer;\n}\n.k-notification-right p{\n  font-size: 13px;\n  margin: 0;\n  padding: 10px 0;\n  word-break: break-all;\n}\n.k-notification-left, .k-notification-right{\n  float: left;\n}\n.k-notification-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-notification-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-notification-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-notification-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border: 1px solid #faebcc;\n}\n.k-notification-fade-enter-active{\n  transition: all .2s linear;\n}\n.k-notification-fade-leave-active{\n  transition: all .25s linear;\n}\n.k-notification-fade-enter{\n  opacity: 0;\n  height: 0;\n  right: -360px;\n}\n.k-notification-fade-leave-active{\n  opacity: 0;\n  height: 0;\n  padding: 0;\n  border: none;\n  right: -360px;\n}\n/*Message*/\n.k-message-wrap{\n  position: fixed;\n  top: 20px;\n  z-index: 999999;\n  height: 0px;\n  width: 100%;\n  text-align: center;\n}\n.k-message{\n  display: inline-block;\n  top: 0;\n  border-radius: 4px;\n  padding: 6px 12px;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n}\n.k-message i{\n  margin-right: 8px;\n}\n.k-message-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-message-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-message-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-message-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border:1px solid #faebcc;\n}\n.k-message-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-message-close{\n  cursor: pointer;\n  margin-left: 12px;\n}\n.k-message-container{\n  position: absolute;\n  height: 0px;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n.k-animate-top-in-enter-active, .k-animate-top-in-leave-active{\n  transition: all .15s ease-out;\n}\n.k-animate-top-in-enter, .k-animate-top-in-leave-active{\n  margin-top: -30px;\n  opacity: 0;\n}\n/*Dialog*/\n.k-dialog-container{\n  position: fixed;\n  width: 0;\n  height: 0;\n  top: 0;\n  left: 0;\n  z-index: 99999;\n}\n.k-dialog-radius .k-dialog{\n  border-radius: 4px;\n}\n.k-dialog-container-show{\n  width: 100%;\n  height: 100%;\n}\n.k-dialog-wrap{\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n}\n.k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{\n  transition: all .15s ease;\n}\n.k-dialog-fade-in-enter, .k-dialog-fade-in-leave-active{\n  opacity: 0;\n}\n.k-dialog{\n  position: relative;\n  display: inline-block;\n  margin-top: 35px;\n  width: 400px;\n  background: #fff;\n  border: 1px solid #ccc;\n  padding: 20px 16px;\n  text-align: left;\n}\n.k-dialog h3{\n  font-size: 16px;\n  padding: 0;\n  padding-left: 10px;\n  margin: 0;\n  text-align: initial;\n  color: #333;\n}\n.k-dialog-close{\n  color: #666;\n  float: right;\n  margin-right: 10px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.k-dialog-content{\n  color: #555;\n  text-align: initial;\n  padding: 0;\n  margin: 0;\n  font-size: 14px;\n  text-indent: 2em;\n  padding: 22px 0 16px;\n}\n.k-dialog-enter-active, .k-dialog-leave-active{\n  transition: all .2s ease;\n}\n.k-dialog-enter, .k-dialog-leave-active{\n  margin-top: 0;\n  opacity: 0;\n  -webkit-filter: blur(3px);\n  filter: blur(3px);\n}\n.k-dialog-button{\n  padding-top: 20px;\n  text-align: right;\n}\n/*Modal*/\n.k-modal-container{\n  position: fixed;\n  width: 0;\n  height: 0;\n  top: 0;\n  left: 0;\n  z-index: 99999;\n  background: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  /*-webkit-filter: blur(3px);\n  filter: blur(3px);*/\n}\n.k-modal-container-show{\n  width: 100%;\n  height: 100%;\n  padding: 35px 0;\n  box-sizing: border-box;\n}\n.k-modal-enter-active, .k-modal-leave-active{\n  transition: all .15s ease;\n}\n.k-modal-enter, .k-modal-leave-active{\n  opacity: 0;\n}\n.k-modal-wrap-enter-active, .k-modal-wrap-leave-active{\n  transition: all .2s ease-out;\n}\n.k-modal-wrap-enter, .k-modal-wrap-leave-active{\n  opacity: 0;\n  transform: scale(.9);\n  -webkit-filter: blur(3px);\n  filter: blur(3px);\n}\n.k-modal{\n  position: relative;\n  display: inline-block;\n  /*max-width: 600px;*/\n  max-height: 100%;\n  background: #fff;\n  padding: 18px 20px 20px;\n  text-align: left;\n  box-shadow: 0 2px 8px rgba(0,0,0,.2)\n}\n.k-modal-close {\n  position: relative;\n}\n.k-modal-close .k-modal-title{\n  margin: 0;\n  font-size: 16px;\n  color: #333;\n  font-weight: bold;\n}\n.k-modal-close .k-button{\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 0;\n}\n.k-modal-close .k-button::before{\n  font-family: Arial,\"Helvetica CY\",\"Nimbus Sans L\",sans-serif!important;\n  font-size: 24px;\n  line-height: 14px;\n  content: \"\\D7\";\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "/*common*/\n.k-absolute-menu{\n  position: absolute;\n  margin-top: 2px;\n  min-width: 100%;\n  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  box-shadow: 0 6px 12px rgba(0,0,0,.175);\n  z-index: 9999;\n}\n.k-border-box{\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-clear-float{\n  clear: both;\n}\n/*Grid*/\n.k-col{\n  position: relative;\n  float: left;\n}\n.k-row{\n  width: 100%;\n  position: relative;\n  height: auto;\n  clear: both;\n}\n.k-col-0{\n  width: 0%;\n}\n.k-col-1{\n  width: 8.333333333%\n}\n.k-col-2{\n  width: 16.666666667%\n}\n.k-col-3{\n  width: 25%\n}\n.k-col-4{\n  width: 33.333333333%\n}\n.k-col-5{\n  width: 41.666666667%\n}\n.k-col-6{\n  width: 50%\n}\n.k-col-7{\n  width: 58.3333333333%\n}\n.k-col-8{\n  width: 66.666666667%\n}\n.k-col-9{\n  width: 75%\n}\n.k-col-10{\n  width: 83.3333333333%\n}\n.k-col-11{\n  width: 91.666666667%\n}\n.k-col-12{\n  width: 100%\n}\n.k-col-right-1{\n  margin-right: 8.333333333%\n}\n.k-col-right-2{\n  margin-right: 16.666666667%\n}\n.k-col-right-3{\n  margin-right: 25%\n}\n.k-col-right-4{\n  margin-right: 33.333333333%\n}\n.k-col-right-5{\n  margin-right: 41.666666667%\n}\n.k-col-right-6{\n  margin-right: 50%\n}\n.k-col-right-7{\n  margin-right: 58.3333333333%\n}\n.k-col-right-8{\n  margin-right: 66.666666667%\n}\n.k-col-right-9{\n  margin-right: 75%\n}\n.k-col-right-10{\n  margin-right: 83.3333333333%\n}\n.k-col-right-11{\n  margin-right: 91.666666667%\n}\n.k-col-right-12{\n  margin-right: 100%\n}\n.k-col-left-1{\n  margin-left: 8.333333333%\n}\n.k-col-left-2{\n  margin-left: 16.666666667%\n}\n.k-col-left-3{\n  margin-left: 25%\n}\n.k-col-left-4{\n  margin-left: 33.333333333%\n}\n.k-col-left-5{\n  margin-left: 41.666666667%\n}\n.k-col-left-6{\n  margin-left: 50%\n}\n.k-col-left-7{\n  margin-left: 58.3333333333%\n}\n.k-col-left-8{\n  margin-left: 66.666666667%\n}\n.k-col-left-9{\n  margin-left: 75%\n}\n.k-col-left-10{\n  margin-left: 83.3333333333%\n}\n.k-col-left-11{\n  margin-left: 91.666666667%\n}\n.k-col-left-12{\n  margin-left: 100%\n}\n/*ButtonGroup*/\n.k-button-group{\n  font-size: 0px;\n  display: inline-table;\n  position: relative;\n}\n.k-button-group-radius{\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.k-button-group .k-button{\n  border-radius: 0;\n  margin-left: -1px;\n}\n.k-button-group .k-button:first-child{\n  margin-left: 0;\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-button:last-child{\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n.k-button-group .k-button:hover{\n  z-index: 99;\n}\n.k-button-group .k-button-circle{\n  padding: auto;\n}\n.k-button-group .k-dropdown{\n  margin-left: -1px;\n}\n.k-button-group .k-dropdown-menu-item{\n  font-size: initial;\n}\n.k-button-group .k-dropdown:first-child{\n  margin-left: 0;\n}\n.k-button-group .k-dropdown{\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.k-button-group .k-dropdown{\n  border-radius: 0;\n  vertical-align: top;\n}\n.k-button-group .k-dropdown:first-child{\n  border-top-left-radius: inherit;\n  border-bottom-left-radius: inherit;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.k-button-group .k-dropdown:last-child{\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n  border-top-right-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n/*DropDown*/\n.k-dropdown{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n}\n.k-dropdown i:last-child{\n  margin-left: 10px;\n  transition: transform .15s ease-out;\n}\n.k-dropdown i:first-child{\n  margin-left: 0;\n  margin-right: 6px;\n}\n.k-dropdown-menu{\n  margin: 1px 0 0;\n  padding: 5px 0 15px 0;\n  background: #fff;\n  border: 1px solid #d5d5d5;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  overflow: hidden;\n  color: #666;\n}\n.k-dropdown-menu-item{\n  list-style: none;\n  position: relative;\n  padding: 6px 10px;\n  line-height: 1;\n  color: #888;\n  cursor: pointer;\n  transition: color .15s ease-out;\n}\n.k-dropdown-menu-item-icon{\n  padding-left: 2em;\n}\n.k-dropdown-menu-item-i{\n  position: absolute;\n  left: 10px;\n  height: 1em;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n.k-dropdown-menu-item:hover{\n  color: #666;\n}\n.k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{\n  height: auto;\n  transition: all .15s ease-out;\n}\n.k-dropdown-menu-enter, .k-dropdown-menu-leave-active{\n  height: 0;\n  padding: 0;\n  transform: rotateX(30deg);\n  opacity: 0;\n}\n/*Button*/\nbutton::-moz-focus-inner {\n  padding: 0;\n  border: none;\n  margin: 0;\n}\n.k-button{\n  position: relative;\n  display: inline-block;\n  outline: none;\n  font-weight: 400;\n  text-align: center;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  line-height: 1;\n  /*line-height: 1.5;*/\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n  transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;\n}\n.k-button-radius{\n  border-radius: 4px;\n}\n.k-button i:first-child{\n  margin-right: 6px;\n}\n.k-button i:last-child{\n  margin-right: 0px;\n}\n.k-button-mini{\n  padding: 2px 4px;\n}\n.k-button-small{\n  padding: 4px 8px;\n}\n.k-button-normal{\n  padding: 6px 14px;\n}\n.k-button-large{\n  padding: 8px 16px;\n}\n.k-button-default{\n  background: #fff;\n  color: #666;\n  border-color: #d5d5d5;\n}\n.k-button-default:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-default:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-ghost{\n  color: #666;\n  background: none;\n  border-color: #d5d5d5;\n}\n.k-button-ghost:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-ghost:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-dashed{\n  border: 1px dashed #d5d5d5;\n  background: #fff;\n  color: #666;\n}\n.k-button-dashed:hover{\n  border-color: #20a0ff;\n  color: #20a0ff;\n}\n.k-button-dashed:active{\n  border-color: #3879D9;\n  color: #3879D9;\n}\n.k-button-text{\n  background: transparent;\n  color: #666;\n  border-color: transparent;\n}\n.k-button-text:hover{\n  color: #4db3ff;\n}\n.k-button-text:active{\n  color: #3879D9;\n}\n.k-button-primary{\n  background: #20a0ff;\n  color: #fff;\n  border-color: #20a0ff;\n}\n.k-button-primary:hover{\n  border-color: #4db3ff;\n  background: #4db3ff;\n  color: #fff;\n}\n.k-button-primary:active{\n  border-color: #3879D9;\n  background: #3879D9;\n  color: #fff;\n}\n.k-button-success {\n  border-color: #13ce66;\n  background: #13ce66;\n  color: #fff;\n}\n.k-button-success:hover {\n  background: #42d885;\n  border-color: #42d885;\n}\n.k-button-success:active {\n  background: #42AE77;\n  border-color: #42AE77;\n}\n.k-button-warning {\n  border-color: #f7ba2a;\n  background: #f7ba2a;\n  color: #fff;\n}\n.k-button-warning:hover {\n  background: #f9c885;\n  border-color: #f9c885;\n}\n.k-button-warning:active {\n  background: #FF9900;\n  border-color: #FF9900;\n}\n.k-button-danger {\n  border-color: #ff4949;\n  background: #ff4949;\n  color: #fff;\n}\n.k-button-danger:hover {\n  background: #ff6d6d;\n  border-color: #ff6d6d;\n}\n.k-button-danger:active {\n  background: #cc3333;\n  border-color: #cc3333;\n}\n.k-button-info {\n  border-color: #50bfff;\n  background: #50bfff;\n  color: #fff;\n}\n.k-button-info:hover {\n  background: #73ccff;\n  border-color: #73ccff;\n}\n.k-button-info:active {\n  background: #20a0ff;\n  border-color: #20a0ff;\n}\n.k-button-disable{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:hover{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-disable:active{\n  cursor: not-allowed;\n  color: #aaa;\n  border-color: #d3dce6;\n  background: #eee;\n}\n.k-button-circle{\n  border-radius: 50%;\n  padding: 0;\n  width: 2em;\n  height: 2em;\n}\n/*Switch*/\n.k-switch{\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n  background: #e0e0e0;\n  cursor: pointer;\n  transition: all .35s ease-in ;\n}\n.k-switch-default {\n  width: 40px;\n  height: 20px;\n  border-radius: 20px;\n}\n.k-switch a{\n  display: block;\n  position: absolute;\n  top: 2px;\n  transition: all .35s ease-in-out;\n}\n.k-switch-disable a{\n  left: 2px;\n}\n.k-switch-enable a{\n  left: 22px;\n}\n.k-switch-enable {\n  background: #4db3ff;\n}\n.k-switch-circle{\n  width: 16px;\n  height: 16px;\n  background: #fff;\n  border-radius: 50%;\n}\n.k-switch-animate{\n  width: 24px;\n}\n.k-switch-status-disable{\n  cursor: not-allowed;\n}\n/*notification*/\n.k-notification{\n  position: relative;\n  font-size: 14px;\n  margin-top: 16px;\n  width: 360px;\n  height: auto;\n  border-radius: 3px;\n  border: 1px solid #c0ccda;\n  right: 4px;\n  padding: 12px 20px 12px 10px;\n  color: #666;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -o-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.k-notification-wrap{\n  position: fixed;\n  right: 0;\n  top: 60px;\n}\n.k-notification-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-notification p{\n  color: inherit;\n}\n.k-notification-title{\n  color: inherit;\n}\n.k-notification-left{\n  width: 72px;\n  margin-top: 16px;\n  height: 100%;\n  text-align: center;\n}\n.k-notification-left i{\n  font-size: 32px;\n  display: inline-block;\n}\n.k-notification-right{\n  width: 248px;\n}\n.k-notification-right h3{\n  padding-top: 6px;\n  font-size: 14px;\n  font-weight: bold;\n  margin: 0;\n}\n.k-notification-right i{\n  float: right;\n  cursor: pointer;\n}\n.k-notification-right p{\n  font-size: 13px;\n  margin: 0;\n  padding: 10px 0;\n  word-break: break-all;\n}\n.k-notification-left, .k-notification-right{\n  float: left;\n}\n.k-notification-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-notification-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-notification-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-notification-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border: 1px solid #faebcc;\n}\n.k-notification-fade-enter-active{\n  transition: all .2s linear;\n}\n.k-notification-fade-leave-active{\n  transition: all .25s linear;\n}\n.k-notification-fade-enter{\n  opacity: 0;\n  height: 0;\n  right: -360px;\n}\n.k-notification-fade-leave-active{\n  opacity: 0;\n  height: 0;\n  padding: 0;\n  border: none;\n  right: -360px;\n}\n/*Message*/\n.k-message-wrap{\n  position: fixed;\n  top: 20px;\n  z-index: 999999;\n  height: 0px;\n  width: 100%;\n  text-align: center;\n}\n.k-message{\n  display: inline-block;\n  top: 0;\n  border-radius: 4px;\n  padding: 6px 12px;\n  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n}\n.k-message i{\n  margin-right: 8px;\n}\n.k-message-success {\n  background: #dff0d8;\n  color: #3c763d;\n  border: 1px solid #d6e9c6;\n}\n.k-message-info {\n  color: #31708f;\n  background: #d9edf7;\n  border: 1px solid #bce8f1;\n}\n.k-message-error {\n  color: #a94442;\n  background: #f2dede;\n  border: 1px solid #ebccd1;\n}\n.k-message-warning {\n  color: #8a6d3b;\n  background: #fcf8e3;\n  border:1px solid #faebcc;\n}\n.k-message-default {\n  background: #fff;\n  color: #888;\n  border: 1px solid #d9d9d9;\n}\n.k-message-close{\n  cursor: pointer;\n  margin-left: 12px;\n}\n.k-message-container{\n  position: absolute;\n  height: 0px;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n.k-animate-top-in-enter-active, .k-animate-top-in-leave-active{\n  transition: all .15s ease-out;\n}\n.k-animate-top-in-enter, .k-animate-top-in-leave-active{\n  margin-top: -30px;\n  opacity: 0;\n}\n/*Dialog*/\n.k-dialog-container{\n  position: fixed;\n  width: 0;\n  height: 0;\n  top: 0;\n  left: 0;\n  z-index: 99999;\n}\n.k-dialog-radius .k-dialog{\n  border-radius: 4px;\n}\n.k-dialog-container-show{\n  width: 100%;\n  height: 100%;\n}\n.k-dialog-wrap{\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n}\n.k-dialog-fade-in-enter-active, .k-dialog-fade-in-leave-active{\n  transition: all .15s ease;\n}\n.k-dialog-fade-in-enter, .k-dialog-fade-in-leave-active{\n  opacity: 0;\n}\n.k-dialog{\n  position: relative;\n  display: inline-block;\n  margin-top: 35px;\n  width: 400px;\n  background: #fff;\n  border: 1px solid #d5d5d5;\n  padding: 20px 16px;\n  text-align: left;\n}\n.k-dialog-title{\n  position: relative;\n  font-size: 16px;\n  padding: 0;\n  padding-left: 10px;\n  margin: 0;\n  text-align: initial;\n  color: #333;\n}\n.k-dialog-title .k-button{\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 0;\n}\n.k-dialog-title .k-button::before{\n  font-family: Arial,\"Helvetica CY\",\"Nimbus Sans L\",sans-serif!important;\n  font-size: 24px;\n  line-height: 14px;\n  content: \"\\D7\";\n  text-align: center;\n}\n.k-dialog-close{\n  color: #666;\n  float: right;\n  margin-right: 10px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.k-dialog-content{\n  color: #666;\n  text-align: initial;\n  padding: 0;\n  margin: 0;\n  font-size: 14px;\n  text-indent: 2em;\n  padding: 22px 0 16px;\n}\n.k-dialog-enter-active, .k-dialog-leave-active{\n  transition: all .2s ease;\n}\n.k-dialog-enter, .k-dialog-leave-active{\n  margin-top: 0;\n  opacity: 0;\n  -webkit-filter: blur(3px);\n  filter: blur(3px);\n}\n.k-dialog-button{\n  padding-top: 20px;\n  text-align: right;\n}\n/*Modal*/\n.k-modal-container{\n  position: fixed;\n  width: 0;\n  height: 0;\n  top: 0;\n  left: 0;\n  z-index: 99999;\n  background: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  /*-webkit-filter: blur(3px);\n  filter: blur(3px);*/\n}\n.k-modal-container-show{\n  width: 100%;\n  height: 100%;\n  padding: 35px 0;\n  box-sizing: border-box;\n}\n.k-modal-enter-active, .k-modal-leave-active{\n  transition: all .15s ease;\n}\n.k-modal-enter, .k-modal-leave-active{\n  opacity: 0;\n}\n.k-modal-wrap-enter-active, .k-modal-wrap-leave-active{\n  transition: all .2s ease-out;\n}\n.k-modal-wrap-enter, .k-modal-wrap-leave-active{\n  opacity: 0;\n  transform: scale(.9);\n  -webkit-filter: blur(3px);\n  filter: blur(3px);\n}\n.k-modal{\n  position: relative;\n  display: inline-block;\n  /*max-width: 600px;*/\n  max-height: 100%;\n  background: #fff;\n  padding: 18px 20px 20px;\n  text-align: left;\n  box-shadow: 0 2px 8px rgba(0,0,0,.2);\n}\n.k-modal-close {\n  position: relative;\n}\n.k-modal-close .k-modal-title{\n  margin: 0;\n  font-size: 16px;\n  color: #333;\n  font-weight: bold;\n}\n.k-modal-close .k-button{\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 0;\n}\n.k-modal-close .k-button::before{\n  font-family: Arial,\"Helvetica CY\",\"Nimbus Sans L\",sans-serif!important;\n  font-size: 24px;\n  line-height: 14px;\n  content: \"\\D7\";\n  text-align: center;\n}\n/*Popover*/\n.k-popover-wrap{\n  display: inline-block;\n  vertical-align: middle;\n}\n.k-popover{\n  position: absolute;\n  border: 1px solid #d5d5d5;\n  padding: 6px 10px;\n  background: #fff;\n  box-shadow: 0 1px 10px rgba(0,0,0,.2);\n  z-index: 99999;\n}\n.k-popover-content{\n  position: relative;\n}\n.k-popover-arrow{\n  position: absolute;\n  width: 16px;\n  height: 16px;\n}\n.k-popover-top .k-popover-arrow{\n  bottom: -16px;\n}\n.k-popover-bottom .k-popover-arrow{\n  top: -8px;\n}\n.k-popover-left .k-popover-arrow{\n  right: -16px;\n}\n.k-popover-right .k-popover-arrow{\n  left: -8px;\n}\n.k-popover-top .k-popover-arrow::after{\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-top: 7px solid #fff;\n  left: 1.5px;\n}\n.k-popover-top .k-popover-arrow::before{\n  border-left: 8px solid transparent;\n  border-right: 8px solid transparent;\n  border-top: 8px solid #d5d5d5;\n}\n.k-popover-bottom .k-popover-arrow::after{\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-bottom: 7px solid #fff;\n  left: 1.5px;\n  top: 1px;\n}\n.k-popover-bottom .k-popover-arrow::before{\n  border-left: 8px solid transparent;\n  border-right: 8px solid transparent;\n  border-bottom: 8px solid #d5d5d5;\n}\n.k-popover-right .k-popover-arrow::after{\n  border-top: 6px solid transparent;\n  border-bottom: 6px solid transparent;\n  border-right: 7px solid #fff;\n  top: 1.5px;\n  left: 1px;\n}\n.k-popover-right .k-popover-arrow::before{\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-right: 8px solid #d5d5d5;\n}\n.k-popover-left .k-popover-arrow::after{\n  border-top: 6px solid transparent;\n  border-bottom: 6px solid transparent;\n  border-left: 7px solid #fff;\n  top: 1.5px;\n  left: 0px;\n}\n.k-popover-left .k-popover-arrow::before{\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid #d5d5d5;\n}\n.k-popover-arrow::after{\n  content: '';\n  display: block;\n  position: absolute;\n  top: 0;\n  width: 0;\n  height: 0;\n}\n.k-popover-arrow::before{\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  left: 0;\n}\n.k-popover-enter-active, .k-popover-leave-active{\n  transition: transform .15s ease-out, filter .15s ease-out, opacity .15s ease-out;\n}\n.k-popover-enter, .k-popover-leave-active{\n  opacity: 0;\n  transform: scale(.9);\n  -webkit-filter: blur(3px);\n  filter: blur(3px);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports) {
 
 /*
@@ -8820,7 +8991,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9006,7 +9177,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -9030,7 +9201,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(81);
+	fixUrls = __webpack_require__(83);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -9283,7 +9454,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports) {
 
 
@@ -9352,14 +9523,14 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(33),
+  __webpack_require__(34),
   /* template */
-  __webpack_require__(91),
+  __webpack_require__(93),
   /* scopeId */
   null,
   /* cssModules */
@@ -9386,14 +9557,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(37),
+  __webpack_require__(38),
   /* template */
-  __webpack_require__(85),
+  __webpack_require__(87),
   /* scopeId */
   null,
   /* cssModules */
@@ -9420,14 +9591,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(39),
+  __webpack_require__(40),
   /* template */
-  __webpack_require__(88),
+  __webpack_require__(90),
   /* scopeId */
   null,
   /* cssModules */
@@ -9454,7 +9625,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9485,7 +9656,7 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9502,7 +9673,7 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9550,7 +9721,7 @@ if (false) {
 }
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9584,7 +9755,7 @@ if (false) {
 }
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9604,7 +9775,7 @@ if (false) {
 }
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9621,7 +9792,7 @@ if (false) {
 }
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9637,12 +9808,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "show"
     }],
     staticClass: "k-dialog"
-  }, [_c('h3', [_vm._v("\n      " + _vm._s(this.title) + "\n      "), _c('i', {
-    staticClass: "fa fa-close k-dialog-close",
+  }, [_c('h3', {
+    staticClass: "k-dialog-title"
+  }, [_vm._v("\n      " + _vm._s(this.title) + "\n      "), _c('k-button', {
+    attrs: {
+      "type": "text"
+    },
     on: {
       "click": _vm.close
     }
-  })]), _vm._v(" "), _c('p', {
+  })], 1), _vm._v(" "), _c('p', {
     staticClass: "k-dialog-content"
   }, [_vm._v(_vm._s(this.content))]), _vm._v(" "), _c('div', {
     staticClass: "k-dialog-button",
@@ -9679,7 +9854,7 @@ if (false) {
 }
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9701,7 +9876,7 @@ if (false) {
 }
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9720,7 +9895,57 @@ if (false) {
 }
 
 /***/ }),
-/* 94 */
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    ref: "Popover",
+    staticClass: "k-popover-wrap",
+    on: {
+      "mouseenter": _vm.mouseenter,
+      "mouseleave": _vm.mouseleave,
+      "click": _vm.click
+    }
+  }, [_vm._t("default"), _vm._v(" "), _c('transition', {
+    attrs: {
+      "name": "k-popover"
+    }
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.show),
+      expression: "show"
+    }],
+    ref: "PopoverDOM",
+    class: ("k-popover k-popover-" + _vm.dire),
+    style: (("" + _vm.cssStyle)),
+    on: {
+      "mouseenter": function($event) {
+        $event.stopPropagation();
+      },
+      "mouseleave": function($event) {
+        $event.stopPropagation();
+      },
+      "click": function($event) {
+        $event.stopPropagation();
+      }
+    }
+  }, [_c('div', {
+    staticClass: "k-popover-arrow"
+  }), _vm._v(" "), _vm._t("Popover")], 2)])], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-8790ab2a", module.exports)
+  }
+}
+
+/***/ }),
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9753,7 +9978,7 @@ if (false) {
 }
 
 /***/ }),
-/* 95 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9771,7 +9996,7 @@ if (false) {
 }
 
 /***/ }),
-/* 96 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9833,7 +10058,7 @@ if (false) {
 }
 
 /***/ }),
-/* 97 */
+/* 100 */
 /***/ (function(module, exports) {
 
 var g;
@@ -9860,7 +10085,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 98 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9881,15 +10106,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Layout_Layout_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Layout_Layout_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Modal_Modal_vue__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Modal_Modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Modal_Modal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Row_Row_vue__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Row_Row_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Row_Row_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Switch_Switch_vue__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Switch_Switch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Switch_Switch_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_MainBus_index_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Notification_index_js__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Message_index_js__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Dialog_index_js__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Dialog_Event_js__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Popover_Popover_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Popover_Popover_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Popover_Popover_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Row_Row_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Row_Row_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Row_Row_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Switch_Switch_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Switch_Switch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Switch_Switch_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_MainBus_index_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Notification_index_js__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Message_index_js__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Dialog_index_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_Dialog_Event_js__ = __webpack_require__(17);
+
 
 
 
@@ -9915,16 +10143,17 @@ exports.install = function (Vue, options) {
   Vue.component(__WEBPACK_IMPORTED_MODULE_4__components_DropDown_DropDown_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_4__components_DropDown_DropDown_vue___default.a);
   Vue.component(__WEBPACK_IMPORTED_MODULE_5__components_DropDown_DropDownItem_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_5__components_DropDown_DropDownItem_vue___default.a);
   Vue.component(__WEBPACK_IMPORTED_MODULE_6__components_Layout_Layout_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_6__components_Layout_Layout_vue___default.a);
-  Vue.component(__WEBPACK_IMPORTED_MODULE_8__components_Row_Row_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_8__components_Row_Row_vue___default.a);
-  Vue.component(__WEBPACK_IMPORTED_MODULE_9__components_Switch_Switch_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_9__components_Switch_Switch_vue___default.a);
+  Vue.component(__WEBPACK_IMPORTED_MODULE_8__components_Popover_Popover_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_8__components_Popover_Popover_vue___default.a);
+  Vue.component(__WEBPACK_IMPORTED_MODULE_9__components_Row_Row_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_9__components_Row_Row_vue___default.a);
+  Vue.component(__WEBPACK_IMPORTED_MODULE_10__components_Switch_Switch_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_10__components_Switch_Switch_vue___default.a);
   Vue.component(__WEBPACK_IMPORTED_MODULE_7__components_Modal_Modal_vue___default.a.name, __WEBPACK_IMPORTED_MODULE_7__components_Modal_Modal_vue___default.a);
 
   Vue.prototype.$Kui = {
-    MainBus: __WEBPACK_IMPORTED_MODULE_10__components_MainBus_index_js__["a" /* default */],
-    Notification: __WEBPACK_IMPORTED_MODULE_11__components_Notification_index_js__["a" /* default */],
-    Message: __WEBPACK_IMPORTED_MODULE_12__components_Message_index_js__["a" /* default */],
-    Dialog: __WEBPACK_IMPORTED_MODULE_13__components_Dialog_index_js__["a" /* default */],
-    DialogEvent: __WEBPACK_IMPORTED_MODULE_14__components_Dialog_Event_js__["a" /* default */]
+    MainBus: __WEBPACK_IMPORTED_MODULE_11__components_MainBus_index_js__["a" /* default */],
+    Notification: __WEBPACK_IMPORTED_MODULE_12__components_Notification_index_js__["a" /* default */],
+    Message: __WEBPACK_IMPORTED_MODULE_13__components_Message_index_js__["a" /* default */],
+    Dialog: __WEBPACK_IMPORTED_MODULE_14__components_Dialog_index_js__["a" /* default */],
+    DialogEvent: __WEBPACK_IMPORTED_MODULE_15__components_Dialog_Event_js__["a" /* default */]
   };
 };
 
