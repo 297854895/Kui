@@ -988,8 +988,9 @@ button::-moz-focus-inner {
   color: #20a0ff;
 }
 .k-page-item{
+  line-height: 1em;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   list-style: none;
 }
 .k-page-item-a{
@@ -1004,7 +1005,7 @@ button::-moz-focus-inner {
 }
 .k-page-item-a-enable {
   cursor: pointer;
-  transition: all .3s;
+  transition: color .3s ease-out;
 }
 .k-page-item-a-disable {
   color: #bbb;
