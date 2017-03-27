@@ -270,190 +270,49 @@
       <k-button>Click Popover Bottom</k-button>
       <div slot="Popover">Click show Popoverxxxxxxxxxx<div></div>sadasdasdasd<div></div>asdasdasdasd</div>
     </k-popover>
-    Tree
-    <k-tree
-     checkChangeOutPut="node"
-     :checkChange="treeCheckOnchange"
-     :tree="[
-       {text: 'Node-0', key: 'Node-0', children: [
-         {text: 'Node-0-0', key: 'Node-0-0', children: [
-           {text: 'Node-0-0-0', key: 'Node-0-0-0', children: [
-             {text: 'Node-0-0-0-0', key: 'Node-0-0-0-0', children: [
-               {text: 'Node-0-0-0-0-0', key: 'Node-0-0-0-0-0'}
-             ]},
-             {text: 'Node-0-0-0-1', key: 'Node-0-0-0-1'},
-             {text: 'Node-0-0-0-2', key: 'Node-0-0-0-2'},
-             {text: 'Node-0-0-0-3', key: 'Node-0-0-0-3'},
-           ]},
-           {text: 'Node-0-0-1', key: 'Node-0-0-1'},
-           {text: 'Node-0-0-2', key: 'Node-0-0-2'},
-           {text: 'Node-0-0-3', key: 'Node-0-0-3'},
-         ]},
-         {text: 'Node-0-1', key: 'Node-0-1', children: [
-           {text: 'Node-0-1-0', key: 'Node-0-1-0', children: [
-             {text: 'Node-0-1-0-0', key: 'Node-0-1-0-0', children: [
-               {text: 'Node-0-1-0-0-0', key: 'Node-0-1-0-0-0'},
-               {text: 'Node-0-1-0-0-1', key: 'Node-0-1-0-0-1'}
-             ]},
-             {text: 'Node-0-1-0-1', key: 'Node-0-1-0-1'},
-             {text: 'Node-0-1-0-2', key: 'Node-0-1-0-2'},
-             {text: 'Node-0-1-0-3', key: 'Node-0-1-0-3'},
-           ]},
-           {text: 'Node-0-1-1', key: 'Node-0-1-1'},
-           {text: 'Node-0-1-2', key: 'Node-0-1-2'},
-           {text: 'Node-0-1-3', key: 'Node-0-1-3'},
-         ]},
-         {text: 'Node-0-2', key: 'Node-0-2'},
-       ]},
-       {text: 'Node-1', key: 'Node-1', children: [
-         {text: 'Node-1-0', key: 'Node-1-0', children: [
-           {text: 'Node-1-0-0', key: 'Node-1-0-0', children: [
-             {text: 'Node-1-0-0-0', key: 'Node-1-0-0-0', children: [
-               {text: 'Node-1-0-0-0-0', key: 'Node-1-0-0-0-0'}
-             ]},
-             {text: 'Node-1-0-0-1', key: 'Node-1-0-0-1'},
-             {text: 'Node-1-0-0-2', key: 'Node-1-0-0-2'},
-             {text: 'Node-1-0-0-3', key: 'Node-1-0-0-3'},
-           ]},
-           {text: 'Node-1-0-1', key: 'Node-1-0-1'},
-           {text: 'Node-1-0-2', key: 'Node-1-0-2'},
-           {text: 'Node-1-0-3', key: 'Node-1-0-3'},
-         ]},
-         {text: 'Node-1-1', key: 'Node-1-1'},
-         {text: 'Node-1-2', key: 'Node-1-2'},
-       ]},
-       {text: 'Node-2', key: 'Node-2'},
-       {text: 'Node-3', key: 'Node-3'},
-     ]"
-     ></k-tree>
-   <div style="height: 20px"></div>
-   <k-tree
-     :checkChange="treeCheckOnchange"
-     type="primary"
-     :tree="[
-       {text: 'Node-0', key: 'Node-0', children: [
-         {text: 'Node-0-0', key: 'Node-0-0', children: [
-           {text: 'Node-0-0-0', key: 'Node-0-0-0', children: [
-             {text: 'Node-0-0-0-0', key: 'Node-0-0-0-0', children: [
-               {text: 'Node-0-0-0-0-0', key: 'Node-0-0-0-0-0'}
-             ]},
-             {text: 'Node-0-0-0-1', key: 'Node-0-0-0-1'},
-             {text: 'Node-0-0-0-2', key: 'Node-0-0-0-2'},
-             {text: 'Node-0-0-0-3', key: 'Node-0-0-0-3'},
-           ]},
-           {text: 'Node-0-0-1', key: 'Node-0-0-1'},
-           {text: 'Node-0-0-2', key: 'Node-0-0-2'},
-           {text: 'Node-0-0-3', key: 'Node-0-0-3'},
-         ]},
-         {text: 'Node-0-1', key: 'Node-0-1', children: [
-           {text: 'Node-0-1-0', key: 'Node-0-1-0', children: [
-             {text: 'Node-0-1-0-0', key: 'Node-0-1-0-0', children: [
-               {text: 'Node-0-1-0-0-0', key: 'Node-0-1-0-0-0'},
-               {text: 'Node-0-1-0-0-1', key: 'Node-0-1-0-0-1'}
-             ]},
-             {text: 'Node-0-1-0-1', key: 'Node-0-1-0-1'},
-             {text: 'Node-0-1-0-2', key: 'Node-0-1-0-2'},
-             {text: 'Node-0-1-0-3', key: 'Node-0-1-0-3'},
-           ]},
-           {text: 'Node-0-1-1', key: 'Node-0-1-1'},
-           {text: 'Node-0-1-2', key: 'Node-0-1-2'},
-           {text: 'Node-0-1-3', key: 'Node-0-1-3'},
-         ]},
-         {text: 'Node-0-2', key: 'Node-0-2'},
-       ]},
-       {text: 'Node-1', key: 'Node-1', children: [
-         {text: 'Node-1-0', key: 'Node-1-0', children: [
-           {text: 'Node-1-0-0', key: 'Node-1-0-0', children: [
-             {text: 'Node-1-0-0-0', key: 'Node-1-0-0-0', children: [
-               {text: 'Node-1-0-0-0-0', key: 'Node-1-0-0-0-0'}
-             ]},
-             {text: 'Node-1-0-0-1', key: 'Node-1-0-0-1'},
-             {text: 'Node-1-0-0-2', key: 'Node-1-0-0-2'},
-             {text: 'Node-1-0-0-3', key: 'Node-1-0-0-3'},
-           ]},
-           {text: 'Node-1-0-1', key: 'Node-1-0-1'},
-           {text: 'Node-1-0-2', key: 'Node-1-0-2'},
-           {text: 'Node-1-0-3', key: 'Node-1-0-3'},
-         ]},
-         {text: 'Node-1-1', key: 'Node-1-1'},
-         {text: 'Node-1-2', key: 'Node-1-2'},
-       ]},
-       {text: 'Node-2', key: 'Node-2'},
-       {text: 'Node-3', key: 'Node-3'},
-     ]"
-     ></k-tree>
- <div style="height: 20px"></div>
- <k-tree
-   check="false"
-   :treeNodeClick="treeNodeClick"
-   type="primary"
-   :tree="[
-     {text: 'Node-0', key: 'Node-0', children: [
-       {text: 'Node-0-0', key: 'Node-0-0', children: [
-         {text: 'Node-0-0-0', key: 'Node-0-0-0', children: [
-           {text: 'Node-0-0-0-0', key: 'Node-0-0-0-0', children: [
-             {text: 'Node-0-0-0-0-0', key: 'Node-0-0-0-0-0'}
-           ]},
-           {text: 'Node-0-0-0-1', key: 'Node-0-0-0-1'},
-           {text: 'Node-0-0-0-2', key: 'Node-0-0-0-2'},
-           {text: 'Node-0-0-0-3', key: 'Node-0-0-0-3'},
-         ]},
-         {text: 'Node-0-0-1', key: 'Node-0-0-1'},
-         {text: 'Node-0-0-2', key: 'Node-0-0-2'},
-         {text: 'Node-0-0-3', key: 'Node-0-0-3'},
-       ]},
-       {text: 'Node-0-1', key: 'Node-0-1', children: [
-         {text: 'Node-0-1-0', key: 'Node-0-1-0', children: [
-           {text: 'Node-0-1-0-0', key: 'Node-0-1-0-0', children: [
-             {text: 'Node-0-1-0-0-0', key: 'Node-0-1-0-0-0'},
-             {text: 'Node-0-1-0-0-1', key: 'Node-0-1-0-0-1'}
-           ]},
-           {text: 'Node-0-1-0-1', key: 'Node-0-1-0-1'},
-           {text: 'Node-0-1-0-2', key: 'Node-0-1-0-2'},
-           {text: 'Node-0-1-0-3', key: 'Node-0-1-0-3'},
-         ]},
-         {text: 'Node-0-1-1', key: 'Node-0-1-1'},
-         {text: 'Node-0-1-2', key: 'Node-0-1-2'},
-         {text: 'Node-0-1-3', key: 'Node-0-1-3'},
-       ]},
-       {text: 'Node-0-2', key: 'Node-0-2'},
-     ]},
-     {text: 'Node-1', key: 'Node-1', children: [
-       {text: 'Node-1-0', key: 'Node-1-0', children: [
-         {text: 'Node-1-0-0', key: 'Node-1-0-0', children: [
-           {text: 'Node-1-0-0-0', key: 'Node-1-0-0-0', children: [
-             {text: 'Node-1-0-0-0-0', key: 'Node-1-0-0-0-0'}
-           ]},
-           {text: 'Node-1-0-0-1', key: 'Node-1-0-0-1'},
-           {text: 'Node-1-0-0-2', key: 'Node-1-0-0-2'},
-           {text: 'Node-1-0-0-3', key: 'Node-1-0-0-3'},
-         ]},
-         {text: 'Node-1-0-1', key: 'Node-1-0-1'},
-         {text: 'Node-1-0-2', key: 'Node-1-0-2'},
-         {text: 'Node-1-0-3', key: 'Node-1-0-3'},
-       ]},
-       {text: 'Node-1-1', key: 'Node-1-1'},
-       {text: 'Node-1-2', key: 'Node-1-2'},
-     ]},
-     {text: 'Node-2', key: 'Node-2'},
-     {text: 'Node-3', key: 'Node-3'},
-   ]"
-   ></k-tree> -->
-   CheckBox
-   <div style="height: 20px"></div>
-   <k-check-box :checkChange="checkBoxChange" :checkData="[
-      {name: '苹果', checked: true, key: 'apple'},
-      {name: '西瓜', key: 'xg'},
-      {name: '橘子', key: 'orange'},
-      {name: '南瓜', key: 'ng'}
-    ]"></k-check-box>
+    <div style="height: 20px;"></div>
+    BreadCrumb
+    <div style="height: 20px;"></div>
+    <k-breadcrumb>
+      <k-breadcrumb-item><i class="fa fa-chrome"></i>One</k-breadcrumb-item>
+      <k-breadcrumb-item>Two</k-breadcrumb-item>
+      <k-breadcrumb-item>Three</k-breadcrumb-item>
+    </k-breadcrumb>
+    <div style="height: 20px;"></div>
+    <k-breadcrumb
+      fontSize="16px">
+      <k-breadcrumb-item>One</k-breadcrumb-item>
+      <k-breadcrumb-item>Two</k-breadcrumb-item>
+      <k-breadcrumb-item>Three</k-breadcrumb-item>
+    </k-breadcrumb>
+    <div style="height: 20px;"></div>
+    Alert
+    <div style="height: 20px;"></div>
+    <k-alert size="small">This is Alert</k-alert>
     <div style="height:20px;clear:both"></div>
-    <k-check-box all="true" :checkChange="checkBoxChange" checkType="mut" :checkData="[
-      {name: '苹果', checked: true, key: 'apple'},
-      {name: '西瓜', key: 'xg'},
-      {name: '橘子', key: 'orange'},
-      {name: '南瓜', key: 'ng'}
-    ]"></k-check-box>
+    <k-alert type="info" size="large" :radius="false">This is Alert</k-alert>
+    <div style="height:20px;clear:both"></div>
+    <k-alert type="warning">This is Alert</k-alert>
+    <div style="height:20px;clear:both"></div>
+    <k-alert type="danger">This is Alert</k-alert>
+    <div style="height:20px;clear:both"></div>
+    <k-alert type="success" close="true">This is Alert</k-alert>
+    <div style="height:20px;clear:both"></div>-->
+    Page
+    <div style="height: 20px;"></div>
+    <k-page
+      :onChange="turnPage"
+      :options="{current: 1, total: 201, pageSize: 10}"/>
+    <div style="height: 20px;"></div>
+    <k-page
+      :onChange="turnPage"
+      :options="{current: 5, total: 81, pageSize: 10}"/>
+    <div style="height: 20px;"></div>
+    <k-page
+      size="small"
+      :radius="false"
+      :onChange="turnPage"
+      :options="{current: 1, total: 59, pageSize: 10}"/>
   </div>
 </template>
 <script>
@@ -555,6 +414,9 @@
       modalWithoutClose() {
         this.modalWithoutCloseShow = !this.modalWithoutCloseShow;
       },
+      turnPage(pageInfo) {
+        console.log(pageInfo);
+      },
       treeCheckOnchange(data) {
         console.log('treeCheckOnchange', data);
       },
@@ -563,7 +425,7 @@
       },
       checkBoxChange(data) {
         console.log('checkBoxChange', data);
-      },
+      }
     }
   }
 </script>
