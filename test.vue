@@ -294,15 +294,22 @@
     <div style="height:20px;clear:both"></div>
     <k-alert type="warning">This is Alert</k-alert>
     <div style="height:20px;clear:both"></div>
-    <k-alert type="danger">This is Alert</k-alert>
+    <k-alert type="error">This is Alert</k-alert>
     <div style="height:20px;clear:both"></div>
     <k-alert type="success" close="true">This is Alert</k-alert>
-    <div style="height:20px;clear:both"></div>-->
+    <div style="height:20px;clear:both"></div>
     Page
     <div style="height: 20px;"></div>
     <k-page
+      type="concise"
       :onChange="turnPage"
-      :options="{current: 1, total: 201, pageSize: 10}"/>
+      :options="{current: 1, total: 20100, pageSize: 10}"/>
+      <div style="height: 20px;"></div>
+    <k-page
+      type="concise"
+      size="small"
+      :onChange="turnPage"
+      :options="{current: 1, total: 20100, pageSize: 10}"/>
     <div style="height: 20px;"></div>
     <k-page
       :onChange="turnPage"
@@ -312,7 +319,14 @@
       size="small"
       :radius="false"
       :onChange="turnPage"
-      :options="{current: 1, total: 59, pageSize: 10}"/>
+      :options="{current: 1, total: 59, pageSize: 10}"/> -->
+    <div style="height: 20px;"></div>
+    Menu
+    <div style="height: 20px;"></div>
+    <k-menu></k-menu>
+    Tab
+    <div style="height: 20px;"></div>
+    <k-tab></k-tab>
   </div>
 </template>
 <script>
@@ -356,7 +370,7 @@
         this.$Kui.Message[type]({content: 'This is Message...', remove: 1800});
       },
       addMessageClose(type) {
-        this.$Kui.Message[type]({content: 'This is Message...'});
+        this.$Kui.Message[type]({content: 'This is Message...asdasdasdasdasdasdasd...'});
       },
       addDialog() {
         this.$Kui.Dialog({
