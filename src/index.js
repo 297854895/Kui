@@ -12,10 +12,12 @@ import DropDown from './components/DropDown/DropDown.vue';
 import DropDownItem from './components/DropDown/DropDownItem.vue';
 import Layout from './components/Layout/Layout.vue';
 import Modal from './components/Modal/Modal.vue';
+import Menu from './components/Menu/Menu.vue';
 import Page from './components/Page/Page.vue';
 import Popover from './components/Popover/Popover.vue';
 import Row from './components/Row/Row.vue';
 import Switch from './components/Switch/Switch.vue';
+import Tab from './components/Tab/Tab.vue';
 import Tree from './components/Tree/Tree.vue';
 
 import MainBus from './components/MainBus/index.js';
@@ -36,10 +38,12 @@ exports.install = (Vue, options) => {
   Vue.component(DropDownItem.name, DropDownItem);
   Vue.component(Layout.name, Layout);
   Vue.component(Modal.name, Modal);
+  Vue.component(Menu.name, Menu);
   Vue.component(Page.name, Page);
   Vue.component(Popover.name, Popover);
   Vue.component(Row.name, Row);
   Vue.component(Switch.name, Switch);
+  Vue.component(Tab.name, Tab);
   Vue.component(Tree.name, Tree);
 
   Vue.prototype.$Kui = {
