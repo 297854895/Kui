@@ -29,6 +29,13 @@ module.exports = {
               'style-loader',
               'css-loader'
             ]
+          },
+          {
+            test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            query: {
+              limit: 10000,
+            }
           }
       ]
   },

@@ -1,27 +1,34 @@
 <template>
   <ul
-    :class="`k-page-wrap k-page-wrap-default ${radius ? 'k-page-radius' : ''}`">
+    :class="`k-page-wrap k-page-wrap-${type} ${radius ? 'k-page-radius' : ''}`">
     <li
-      class="k-page-item"
+      class="k-page-item k-page-arrow"
       @click="onchange(current - 1)">
       <a
         :class="`k-page-item-a k-page-item-a-${current === 1 ? 'disable' : 'enable'} k-page-size-${size}`">
-        &nbsp;<i class="fa fa-angle-left"></i>&nbsp;
+        <i class="iconkui icon-angleleft"></i>
       </a>
     </li><li
       class="k-page-item"
       v-for="(item, idx) in pageArr"
       @click="onchange(item.num)">
       <a
+        v-if="typeof item.num === 'number'"
         :class="`k-page-item-a k-page-size-${size} ${item.num === current ? 'k-page-item-a-active' : 'k-page-item-a-enable'}`">
         {{ item.num }}
+      </a><a
+        v-else
+        :class="`k-page-item-a k-page-more k-page-size-${size} ${item.num === current ? 'k-page-item-a-active' : 'k-page-item-a-enable'}`">
+        <i class="iconkui icon-ellipsis k-page-ellipsis"></i>
+        <i v-if="item.type === 'prev'" class="iconkui icon-angle-double-left k-page-more-icon" @click="more('prev')"></i>
+        <i v-else class="iconkui icon-angledoubleright k-page-more-icon" @click="more('next')"></i>
       </a>
     </li><li
-      class="k-page-item"
+      class="k-page-item k-page-arrow"
       @click="onchange(current + 1)">
       <a
         :class="`k-page-item-a k-page-item-a-${current === Math.ceil(total / pageSize) ? 'disable' : 'enable'} k-page-size-${size}`">
-        &nbsp;<i class="fa fa-angle-right"></i>&nbsp;
+        <i class="iconkui icon-angleright"></i>
       </a>
     </li>
   </ul>
@@ -30,6 +37,10 @@
   export default{
     name: 'k-page',
     props: {
+      type: {
+        type: String,
+        default: 'default'
+      },
       options: {
         type: Object,
         default: () => {return {pageSize: 10, current: 1, total: 0};}
@@ -50,11 +61,17 @@
       const pageArr = this.createPageArr(this.options);
       return {
         pageArr: pageArr,
+        moreClick: false,
         ...this.options
       }
     },
     watch: {
       current(newValue) {
+        if (this.moreClick) {
+          setTimeout(() => {
+            this.moreClick = false;
+          }, 50);
+        }
         this.pageArr = this.createPageArr({current: newValue, pageSize: this.pageSize, total: this.total});
         if (this.onChange && typeof this.onChange === 'function') {
           this.onChange(newValue);
@@ -63,11 +80,29 @@
     },
     methods: {
       onchange(page) {
+        if (this.moreClick) return;
         if (page < 1 || page > Math.ceil(this.total / this.pageSize)) return;
         if (page === this.current) return;
         if (typeof page === 'number') {
           this.current = page;
         }
+      },
+      more(type) {
+        this.moreClick = true;
+        const totalPage = Math.ceil(this.total / this.pageSize);
+        if (type === 'next') {
+          if (this.current > totalPage - 5) {
+            this.current = totalPage;
+            return;
+          }
+          this.current += 5;
+          return;
+        }
+        if (this.current - 5 <= 0) {
+          this.current = 1;
+          return;
+        }
+        this.current -= 5;
       },
       createPageArr(options) {
         const { pageSize, current, total } = options;

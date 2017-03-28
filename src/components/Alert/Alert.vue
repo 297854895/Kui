@@ -29,15 +29,15 @@
         const type_ = icon;
         switch (type_) {
           case 'success':
-            return 'fa fa-check-circle';
-          case 'danger':
-            return 'fa fa-times-circle';
+            return 'iconkui icon-success';
+          case 'error':
+            return 'iconkui icon-error';
           case 'info':
-            return 'fa fa-info-circle';
+            return 'iconkui icon-info';
           case 'warning':
-            return 'fa fa-exclamation-triangle';
+            return 'iconkui icon-warning';
           default:
-            return 'fa fa-telegram';
+            return 'iconkui icon-telegram';
         }
       }
     }

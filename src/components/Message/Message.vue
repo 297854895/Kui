@@ -7,7 +7,7 @@
       v-if="show">
       <div
         :class="`k-message ${this.$options.type ? 'k-message-' + this.$options.type : 'k-message-default'}`">
-        <i :class="returnIcon(this.$options.type)"></i>{{this.$options.content ? this.$options.content : ''}}<i @click="close" v-if="!this.$options.remove" class="fa fa-close k-message-close"></i>
+        <i :class="returnIcon(this.$options.type)"></i>{{this.$options.content ? this.$options.content : ''}}<i @click="close" v-if="!this.$options.remove" class="k-message-close"></i>
       </div>
     </div>
   </transition>
@@ -43,15 +43,15 @@
       returnIcon(type) {
         switch (type) {
           case 'success':
-          return 'fa fa-check-circle';
+          return 'iconkui icon-success';
           case 'error':
-          return 'fa fa-times-circle';
+          return 'iconkui icon-error';
           case 'info':
-          return 'fa fa-info-circle';
+          return 'iconkui icon-info';
           case 'warning':
-          return 'fa fa-exclamation-triangle';
+          return 'iconkui icon-warning';
           default:
-          return 'fa fa-telegram';
+          return 'iconkui icon-telegram';
         }
       }
     }

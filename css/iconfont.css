@@ -1,0 +1,43 @@
+
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1490668523796'); /* IE9*/
+  src: url('iconfont.eot?t=1490668523796#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1490668523796') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1490668523796') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1490668523796#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconkui {
+  font-family: "iconfont" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-info:before { content: "\e611"; }
+
+.icon-warning:before { content: "\e65c"; }
+
+.icon-angledown:before { content: "\e619"; }
+
+.icon-angledoubleright:before { content: "\e60e"; }
+
+.icon-error:before { content: "\e613"; }
+
+.icon-close:before { content: "\e647"; }
+
+.icon-close1:before { content: "\e600"; }
+
+.icon-angleleft:before { content: "\e66a"; }
+
+.icon-angleright:before { content: "\e61a"; }
+
+.icon-success:before { content: "\e618"; }
+
+.icon-telegram:before { content: "\e715"; }
+
+.icon-angle-double-left:before { content: "\e676"; }
+
+.icon-ellipsis:before { content: "\e655"; }

@@ -6,7 +6,7 @@
       </div><div class="k-notification-right">
         <h3 class="k-notification-title">
           <span>{{returnTitle(this.$options.type, this.$options.title)}}</span>
-          <i class="fa fa-close" @click="close"></i>
+          <i class="k-notification-close" @click="close"></i>
         </h3>
         <p>{{this.$options.content ? this.$options.content : ''}}</p>
       </div>
@@ -42,15 +42,15 @@
       returnIcon(type) {
         switch (type) {
           case 'success':
-          return 'k fa fa-check-circle';
+          return 'iconkui icon-success';
           case 'error':
-          return 'k fa fa-times-circle';
+          return 'iconkui icon-error';
           case 'info':
-          return 'k fa fa-info-circle';
+          return 'iconkui icon-info';
           case 'warning':
-          return 'k fa fa-exclamation-triangle';
+          return 'iconkui icon-warning';
           default:
-          return 'k fa fa-telegram';
+          return 'iconkui icon-telegram';
         }
       }
     },
