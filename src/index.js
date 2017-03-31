@@ -2,6 +2,7 @@ import KuiIcon from '../css/iconfont.css';
 import KuiCss from '../css/kui.css';
 
 import Alert from './components/Alert/Alert.vue';
+import Badge from './components/Badge/Badge.vue';
 import BreadCrumb from './components/BreadCrumb/BreadCrumb.vue';
 import BreadCrumbItem from './components/BreadCrumb/BreadCrumbItem.vue';
 import Button from './components/Button/Button.vue';
@@ -29,6 +30,7 @@ import DialogEvent from './components/Dialog/Event.js';
 
 exports.install = (Vue, options) => {
   Vue.component(Alert.name, Alert);
+  Vue.component(Badge.name, Badge);
   Vue.component(BreadCrumb.name, BreadCrumb);
   Vue.component(BreadCrumbItem.name, BreadCrumbItem);
   Vue.component(Button.name, Button);

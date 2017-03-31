@@ -18,10 +18,11 @@
         {{ item.num }}
       </a><a
         v-else
-        :class="`k-page-item-a k-page-more k-page-size-${size} ${item.num === current ? 'k-page-item-a-active' : 'k-page-item-a-enable'}`">
+        :class="`k-page-item-a k-page-more k-page-size-${size} ${item.num === current ? 'k-page-item-a-active' : 'k-page-item-a-enable'}`"
+        @click="more(item.type)">
         <i class="iconkui icon-ellipsis k-page-ellipsis"></i>
-        <i v-if="item.type === 'prev'" class="iconkui icon-angle-double-left k-page-more-icon" @click="more('prev')"></i>
-        <i v-else class="iconkui icon-angledoubleright k-page-more-icon" @click="more('next')"></i>
+        <i v-if="item.type === 'prev'" class="iconkui icon-angle-double-left k-page-more-icon"></i>
+        <i v-else class="iconkui icon-angledoubleright k-page-more-icon"></i>
       </a>
     </li><li
       class="k-page-item k-page-arrow"

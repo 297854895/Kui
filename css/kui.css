@@ -1156,6 +1156,41 @@ button::-moz-focus-inner {
 .k-alert-radius{
   border-radius: 4px;
 }
+/*Badge*/
+.k-badge{
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  font-size: inheritl
+}
+.k-badge-size-mini{
+  width: 10px;
+  height: 10px;
+  top: -5px;
+}
+.k-badge-size-small{
+  top: -.75em;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+.k-badge-size-normal{
+  top: -1em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+}
+.k-badge-size-large{
+  top: -1.5em;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+}
+.k-badge-default{
+  background: #fff;
+  border: 1px solid #d5d5d5;
+  color: #888;
+}
 /*Tree*/
 .k-tree{
   display: block;
