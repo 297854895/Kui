@@ -213,29 +213,28 @@
   margin-left: 4px;
   transition: transform .15s ease-out;
 }
-.k-dropdown i:first-child{
-  margin-left: 0;
-  margin-right: 6px;
-}
 .k-dropdown-menu{
   margin: 1px 0 0;
-  padding: 5px 0 15px 0;
+  padding: 0;
   background: #fff;
   border: 1px solid #d5d5d5;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   overflow: hidden;
-  color: #666;
+  color: inherit;
 }
 .k-dropdown-menu-item{
   font-size: inherit;
   list-style: none;
   position: relative;
-  padding: 6px 10px;
+  padding: 10px;
   line-height: 1;
-  color: #888;
   cursor: pointer;
   transition: color .15s ease-out;
+}
+.k-dropdown-menu-item-disable{
+  cursor: not-allowed;
+  color: #d5d5d5;
 }
 .k-dropdown-menu-item-i{
   position: absolute;
@@ -246,7 +245,10 @@
   margin: auto;
 }
 .k-dropdown-menu-item:hover{
-  color: #666;
+  color: #20a0ff;
+}
+.k-dropdown-menu-item-disable:hover{
+  color: #d5d5d5;
 }
 .k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{
   height: auto;
@@ -257,6 +259,33 @@
   padding: 0;
   transform: rotateX(30deg);
   opacity: 0;
+}
+.k-dropdown-group{
+  border-bottom: 1px solid #e5e5e5;
+}
+.k-dropdown-group-title{
+  font-size: inherit;
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  padding: 10px;
+  line-height: 1;
+}
+.k-dropdown-group-wrap{
+  margin: 0;
+  padding: 0;
+}
+.k-dropdown-group-indent{
+  padding-left: 1em;
+}
+.k-dropdown-group-wrap li:last-child{
+  margin-bottom: 10px;
+}
+.k-dropdown li:last-child{
+  margin-bottom: 10px;
+}
+.k-dropdown .k-dropdown-group:last-child{
+  border: none;
 }
 /*Button*/
 button::-moz-focus-inner {
@@ -715,7 +744,7 @@ button::-moz-focus-inner {
   padding: 0;
   margin: 0;
   text-align: initial;
-  color: #333;
+  color: #444;
 }
 .k-dialog-title .k-button{
   position: absolute;
@@ -738,13 +767,13 @@ button::-moz-focus-inner {
   cursor: pointer;
 }
 .k-dialog-content{
-  color: #666;
+  color: inherit;
   text-align: initial;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: inherit;
   text-indent: 2em;
-  padding: 22px 0 16px;
+  padding: 1em 0 1em 0;
 }
 .k-dialog-enter-active, .k-dialog-leave-active{
   transition: all .2s ease;

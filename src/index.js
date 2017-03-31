@@ -9,6 +9,7 @@ import ButtonGroup from './components/ButtonGroup/ButtonGroup.vue';
 import Col from './components/Col/Col.vue';
 import CheckBox from './components/CheckBox/CheckBox.vue';
 import DropDown from './components/DropDown/DropDown.vue';
+import DropDownGroup from './components/DropDown/DropDownGroup.vue';
 import DropDownItem from './components/DropDown/DropDownItem.vue';
 import Layout from './components/Layout/Layout.vue';
 import Modal from './components/Modal/Modal.vue';
@@ -35,6 +36,7 @@ exports.install = (Vue, options) => {
   Vue.component(CheckBox.name, CheckBox);
   Vue.component(Col.name, Col);
   Vue.component(DropDown.name, DropDown);
+  Vue.component(DropDownGroup.name, DropDownGroup);
   Vue.component(DropDownItem.name, DropDownItem);
   Vue.component(Layout.name, Layout);
   Vue.component(Modal.name, Modal);

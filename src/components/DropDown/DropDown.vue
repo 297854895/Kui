@@ -20,9 +20,9 @@
       {{this.buttonName}}
     </k-button>
     <transition name="k-dropdown-menu">
-      <ul v-if="show" class="k-dropdown-menu k-absolute-menu k-border-box" @click="closeMenu">
+      <div v-if="show" class="k-dropdown-menu k-absolute-menu k-border-box" @click="closeMenu">
         <slot></slot>
-      </ul>
+      </div>
     </transition>
   </span>
 </template>
