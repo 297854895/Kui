@@ -141,9 +141,14 @@
 }
 /*ButtonGroup*/
 .k-button-group{
-  font-size: 0px;
   display: inline-table;
   position: relative;
+}
+.k-button-group >.k-button {
+  float: left;
+}
+.k-button-group >.k-dropdown {
+  float: left;
 }
 .k-button-group-radius{
   border-top-left-radius: 4px;
@@ -172,9 +177,6 @@
 }
 .k-button-group .k-dropdown{
   margin-left: -1px;
-}
-.k-button-group .k-dropdown-menu-item{
-  font-size: initial;
 }
 .k-button-group .k-dropdown:first-child{
   margin-left: 0;
@@ -208,7 +210,7 @@
   position: relative;
 }
 .k-dropdown i:last-child{
-  margin-left: 10px;
+  margin-left: 4px;
   transition: transform .15s ease-out;
 }
 .k-dropdown i:first-child{
@@ -226,6 +228,7 @@
   color: #666;
 }
 .k-dropdown-menu-item{
+  font-size: inherit;
   list-style: none;
   position: relative;
   padding: 6px 10px;
@@ -233,9 +236,6 @@
   color: #888;
   cursor: pointer;
   transition: color .15s ease-out;
-}
-.k-dropdown-menu-item-icon{
-  padding-left: 2em;
 }
 .k-dropdown-menu-item-i{
   position: absolute;
@@ -285,14 +285,11 @@ button::-moz-focus-inner {
   -webkit-transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;
   transition: background-color .3s ease-out, border-color .3s ease-out, color .3s ease-out;
 }
+.k-button i{
+  line-height: 0em;
+}
 .k-button-radius{
   border-radius: 4px;
-}
-.k-button i:first-child{
-  margin-right: 6px;
-}
-.k-button i:last-child{
-  margin-right: 0px;
 }
 .k-button-mini{
   padding: 2px 4px;
@@ -308,7 +305,7 @@ button::-moz-focus-inner {
 }
 .k-button-default{
   background: #fff;
-  color: #666;
+  color: #888;
   border-color: #d5d5d5;
 }
 .k-button-default:hover{
@@ -320,7 +317,7 @@ button::-moz-focus-inner {
   color: #3879D9;
 }
 .k-button-ghost{
-  color: #666;
+  color: #888;
   background: none;
   border-color: #d5d5d5;
 }
@@ -335,7 +332,7 @@ button::-moz-focus-inner {
 .k-button-dashed{
   border: 1px dashed #d5d5d5;
   background: #fff;
-  color: #666;
+  color: #888;
 }
 .k-button-dashed:hover{
   border-color: #20a0ff;
@@ -347,7 +344,7 @@ button::-moz-focus-inner {
 }
 .k-button-text{
   background: transparent;
-  color: #666;
+  color: #888;
   border-color: transparent;
 }
 .k-button-text:hover{
@@ -372,8 +369,8 @@ button::-moz-focus-inner {
   color: #fff;
 }
 .k-button-success {
-  border-color: #13ce66;
-  background: #13ce66;
+  border-color: #2ecc71;
+  background: #2ecc71;
   color: #fff;
 }
 .k-button-success:hover {
@@ -716,7 +713,6 @@ button::-moz-focus-inner {
   position: relative;
   font-size: 16px;
   padding: 0;
-  padding-left: 10px;
   margin: 0;
   text-align: initial;
   color: #333;

@@ -1,5 +1,5 @@
-import KuiCss from '../css/kui.css';
 import KuiIcon from '../css/iconfont.css';
+import KuiCss from '../css/kui.css';
 
 import Alert from './components/Alert/Alert.vue';
 import BreadCrumb from './components/BreadCrumb/BreadCrumb.vue';

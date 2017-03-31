@@ -14,7 +14,6 @@
       :cssStyle="cssStyle"
       :className="className"
       :loading="loading"
-      :icon="icon"
       :width="width"
       :dropMenuShow="show"
       @click="showMenu">
@@ -75,7 +74,7 @@
       },
       fontSize: {
         type: String,
-        default: '12px'
+        default: 'inherit'
       },
       cssStyle: {
         type: String,
@@ -88,10 +87,6 @@
       loading: {
         type: Boolean,
         default: false
-      },
-      icon: {
-        type: String,
-        default: ''
       },
       width: {
         type: String,
