@@ -227,7 +227,7 @@
   font-size: inherit;
   list-style: none;
   position: relative;
-  padding: 10px;
+  padding: 10px 30px 10px 20px;
   line-height: 1;
   cursor: pointer;
   transition: color .15s ease-out;
@@ -251,12 +251,11 @@
   color: #d5d5d5;
 }
 .k-dropdown-menu-enter-active, .k-dropdown-menu-leave-active{
-  height: auto;
-  transition: all .15s ease-out;
+  transition: all .2s ease-out;
 }
 .k-dropdown-menu-enter, .k-dropdown-menu-leave-active{
-  height: 0;
   padding: 0;
+  transform-origin: center top 0px;
   transform: rotateX(30deg);
   opacity: 0;
 }
@@ -264,8 +263,8 @@
   border-bottom: 1px solid #e5e5e5;
 }
 .k-dropdown-group-title{
+  color: #afafaf;
   font-size: inherit;
-  font-weight: bold;
   list-style: none;
   position: relative;
   padding: 10px;
@@ -1159,37 +1158,172 @@ button::-moz-focus-inner {
 /*Badge*/
 .k-badge{
   position: absolute;
-  border-radius: 50%;
   text-align: center;
-  font-size: inheritl
+  font-size: 12px;
+  cursor: auto;
 }
 .k-badge-size-mini{
   width: 10px;
   height: 10px;
+  border-radius: 5px;
   top: -5px;
-}
-.k-badge-size-small{
-  top: -.75em;
-  width: 1.5em;
-  height: 1.5em;
-  line-height: 1.5em;
+  right: -5px;
 }
 .k-badge-size-normal{
-  top: -1em;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-}
-.k-badge-size-large{
-  top: -1.5em;
-  width: 3em;
-  height: 3em;
-  line-height: 3em;
+  top: -.75em;
+  right: -.75em;
+  min-width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: .75em;
 }
 .k-badge-default{
   background: #fff;
   border: 1px solid #d5d5d5;
   color: #888;
+}
+.k-badge-primary{
+  background: #20a0ff;
+  color: #fff;
+  border-color: #20a0ff;
+}
+.k-badge-info{
+  border-color: #50bfff;
+  background: #50bfff;
+  color: #fff;
+}
+.k-badge-success{
+  border-color: #2ecc71;
+  background: #2ecc71;
+  color: #fff;
+}
+.k-badge-warning{
+  border-color: #f7ba2a;
+  background: #f7ba2a;
+  color: #fff;
+}
+.k-badge-error{
+  border-color: #ff4949;
+  background: #ff4949;
+  color: #fff;
+}
+/*Menu*/
+.k-menu{
+  margin: 0;
+  padding: 0;
+}
+.k-menu-x{
+  border-bottom: 1px solid transparent;
+  line-height: 46px;
+}
+.k-menu-y{
+  border-right: 1px solid transparent;
+  line-height: 46px;
+}
+.k-menu-border{
+  border-color: #ccc;
+}
+.k-menu-item {
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: -1px;
+  transition: color .2s ease-out, border-color .2s ease-out;
+  cursor: pointer;
+  list-style: none;
+}
+.k-menu-x .k-menu-item{
+  display: inline-block;
+  float: left;
+  border-bottom: 2px solid transparent;
+}
+.k-menu-y .k-menu-item{
+  display: block;
+}
+.k-menu-y .k-menu-submenu {
+  line-height: 36px;
+}
+.k-menu:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.k-menu-item:hover {
+  color: #20a0ff;
+  border-color: #20a0ff;
+}
+.k-menu-x .k-menu-item-active{
+  color: #20a0ff;
+  border-color: #20a0ff;
+}
+.k-menu-y .k-menu-item-active{
+  color: #20a0ff;
+  border-color: #20a0ff;
+}
+.k-menu-x .k-menu-submenu{
+  z-index: 9999;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  background: #fff;
+  margin: 2px 0 0;
+  min-width: 100%;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  line-height: 1;
+}
+.k-menu-y .k-menu-submenu{
+  padding: 0;
+}
+.k-menu-x .k-menu-item-arrow{
+  margin-left: 6px;
+}
+.k-menu-y .k-menu-item-arrow{
+  position: absolute;
+  height: 100%;
+  right: 20px;
+  line-height: inherit;
+  top: 0;
+}
+.k-menu-submenu .k-menu-item{
+  display: block;
+  float: none;
+  border: none;
+  color: #888;
+}
+.k-menu-submenu .k-menu-item-active{
+  color: #20a0ff;
+  border-color: #20a0ff;
+}
+.k-menu-submenu .k-menu-item:hover{
+  color: #20a0ff;
+}
+.k-menu-submenu .k-menu-submenu-group{
+  padding-top: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
+}
+.k-menu-submenu .k-menu-submenu-group:last-child{
+  border-bottom: none;
+}
+.k-menu-submenu-group-title{
+  padding: 4px 10px;
+  color: #afafaf;
+  cursor: auto;
+}
+.k-menu-submenu .k-menu-item{
+  padding: 6px 40px 6px 20px;
+}
+.k-submenu-enter-active, .k-submenu-leave-active{
+  transition: all .2s ease-out;
+}
+.k-submenu-enter, .k-submenu-leave-active{
+  padding: 0;
+  transform-origin: center top 0px;
+  transform: rotateX(30deg);
+  opacity: 0;
 }
 /*Tree*/
 .k-tree{

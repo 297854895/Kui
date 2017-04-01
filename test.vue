@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- Grid
+     <!-- Grid
     <k-row>
       <div style="height: 40px;background: #ddd"></div>
     </k-row>
@@ -35,48 +35,61 @@
     <k-layout></k-layout>
     Button
     <div style="height: 20px;"></div>
-    <k-button icon="fa fa-search" :disable="true">Search</k-button>
+    <k-button :disable="true"><i class="fa fa-heart" style="margin-right: 6px;"></i>Search</k-button>
     <k-button
      :bindAttr="{
          id: 'id',
        }">123</k-button>
-    <k-button icon="fa fa-search"></k-button>
-    <k-button icon="fa fa-search" shape="circle" type="info"></k-button>
-    <k-button icon="fa fa-chrome" size="mini">Admin</k-button>
-    <k-button icon="fa fa-chrome" size="small">Admin</k-button>
-    <k-button icon="fa fa-chrome">Admin</k-button>
-    <k-button icon="fa fa-chrome" size="large">Admin</k-button>
+    <k-button><i class="fa fa-heart"></i></k-button>
+    <k-button shape="circle" type="info"><i class="fa fa-heart"></i></k-button>
+    <k-button size="mini">Admin</k-button>
+    <k-button size="small">Admin</k-button>
+    <k-button>Admin</k-button>
+    <k-button size="large">Admin</k-button>
     <div style="height: 20px;"></div>
-    <k-button icon="fa fa-chrome">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="info">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="primary">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="success">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="warning">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="danger">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="dashed">Admin</k-button>
-    <k-button icon="fa fa-chrome" type="ghost">Admin</k-button>
+    <k-button>Admin</k-button>
+    <k-button type="info">Admin</k-button>
+    <k-button type="primary">Admin</k-button>
+    <k-button type="success">Admin</k-button>
+    <k-button type="warning">Admin</k-button>
+    <k-button type="danger">Admin</k-button>
+    <k-button type="dashed">Admin</k-button>
+    <k-button type="ghost">Admin</k-button>
     <k-button type="text">Admin</k-button>
     <div style="height: 20px;"></div>
     <k-button type="danger" width="200px" size="large" fontSize="13px">测试测试</k-button>
     <div style="height: 20px;"></div>
-    <k-button :loading="buttonStat" @click="click" icon="fa fa-chrome">{{buttonLabel}}</k-button>
+    <k-button :loading="buttonStat" @click="click">{{buttonLabel}}</k-button>
     <div style="height: 20px;"></div>
     DropDown
     <div style="height: 20px;"></div>
     <k-dropdown>
-      <k-dropdown-item
-       icon="fa fa-chrome">
-       One___zxcccccccccccccccccccccccccccccccccccccccccccc</k-dropdown-item>
-      <k-dropdown-item>One___</k-dropdown-item>
-      <k-dropdown-item>One___</k-dropdown-item>
-      <k-dropdown-item>One___</k-dropdown-item>
+      <k-dropdown-group
+        title="Group-1">
+        <k-dropdown-item>
+         One___zxcccccccccccccccccccccccccccccccccccccccccccc
+        </k-dropdown-item>
+        <k-dropdown-item :disable="true">One___</k-dropdown-item>
+      </k-dropdown-group>
+      <k-dropdown-group
+        title="Group-2">
+        <k-dropdown-item>Two___</k-dropdown-item>
+        <k-dropdown-item>Three___</k-dropdown-item>
+        <k-dropdown-item>Four___</k-dropdown-item>
+      </k-dropdown-group>
+      <k-dropdown-group
+        title="Group-3">
+        <k-dropdown-item>Five___</k-dropdown-item>
+        <k-dropdown-item>Six___</k-dropdown-item>
+      </k-dropdown-group>
+      <k-dropdown-item>Seven___</k-dropdown-item>
+      <k-dropdown-item>Eight___</k-dropdown-item>
     </k-dropdown>
     <div style="height: 20px;"></div>
     <k-dropdown
       :oneMenu="false"
       type="success">
-      <k-dropdown-item
-       icon="fa fa-chrome">
+      <k-dropdown-item>
        One___zxcccccccccccccccccccccccccccccccccccccccccccc</k-dropdown-item>
       <k-dropdown-item>One___</k-dropdown-item>
       <k-dropdown-item>One___</k-dropdown-item>
@@ -102,17 +115,17 @@
     ButtonGroup
     <div style="height: 20px;"></div>
     <k-button-group>
-      <k-button icon="fa fa-chrome">Left</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-heart"></k-button>
+      <k-button>Left</k-button>
+      <k-button>Middle</k-button>
+      <k-button>Middle</k-button>
+      <k-button><i class="fa fa-heart"></i></k-button>
     </k-button-group>
     <div style="height: 20px;"></div>
     <k-button-group :radius="false">
-      <k-button icon="fa fa-chrome">Left</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-heart"></k-button>
+      <k-button>Left</k-button>
+      <k-button>Middle</k-button>
+      <k-button>Middle</k-button>
+      <k-button><i class="fa fa-heart"></i></k-button>
     </k-button-group>
     <div style="height: 20px;"></div>
     <k-button-group>
@@ -122,16 +135,16 @@
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
       </k-dropdown>
-      <k-button icon="fa fa-chrome">Left</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
+      <k-button>Left</k-button>
+      <k-button>Middle</k-button>
       <k-dropdown>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
       </k-dropdown>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-heart"></k-button>
+      <k-button>Middle</k-button>
+      <k-button><i class="fa fa-heart"></i></k-button>
       <k-dropdown>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
@@ -147,16 +160,16 @@
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
       </k-dropdown>
-      <k-button icon="fa fa-chrome">Left</k-button>
-      <k-button icon="fa fa-chrome">Middle</k-button>
+      <k-button>Left</k-button>
+      <k-button>Middle</k-button>
       <k-dropdown>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
       </k-dropdown>
-      <k-button icon="fa fa-chrome">Middle</k-button>
-      <k-button icon="fa fa-heart"></k-button>
+      <k-button>Middle</k-button>
+      <k-button><i class="fa fa-heart"></i></k-button>
       <k-dropdown>
         <k-dropdown-item>One___</k-dropdown-item>
         <k-dropdown-item>One___</k-dropdown-item>
@@ -186,7 +199,7 @@
     <div style="height: 20px;"></div>
     Message
     <div style="height: 20px;"></div>
-    <k-button @click="addMessage('default')" type="default">Default Message</k-button>
+    <k-button @click="addMessage('default')" type="default"><i class="fa fa-heart"></i>Default Message</k-button>
     <k-button @click="addMessage('info')" type="info">Info Message</k-button>
     <k-button @click="addMessage('success')" type="success">Success Message</k-button>
     <k-button @click="addMessage('warning')" type="warning">Warning Message</k-button>
@@ -319,11 +332,397 @@
       size="small"
       :radius="false"
       :onChange="turnPage"
-      :options="{current: 1, total: 59, pageSize: 10}"/> -->
+      :options="{current: 1, total: 59, pageSize: 10}"/>
+    <div style="height: 20px;"></div>
+    Badge
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" />
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" type="info" />
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" type="primary"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" type="success"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" type="warning"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge size="mini" type="error"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info"
+      @click="addBadge">
+      Badge 徽标
+      <k-badge
+        :count="badgeCount"
+        :max="99"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge
+        :count="99"/>
+    </k-button>
+    <div style="height: 20px;"></div>
+    <k-button
+      type="info">
+      Badge 徽标
+      <k-badge
+        :count="199"
+        :max="55"/>
+    </k-button> -->
     <div style="height: 20px;"></div>
     Menu
     <div style="height: 20px;"></div>
-    <k-menu></k-menu>
+    <k-menu
+      :border="false">
+      <k-menu-item
+        :active="true">
+        <i class="fa fa-home" style="margin-right: 6px;font-size:14px"></i>Home
+        <k-menu-submenu>
+          <k-menu-submenu-group
+            title="Group-1">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+          <k-menu-submenu-group
+            title="Group-2">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+        </k-menu-submenu>
+      </k-menu-item>
+      <k-menu-item>
+        <i class="fa fa-home" style="margin-right: 6px;font-size:14px"></i>Table
+        <k-menu-submenu>
+          <k-menu-submenu-group
+            title="Group-1">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+          <k-menu-submenu-group
+            title="Group-2">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+        </k-menu-submenu>
+      </k-menu-item>
+      <k-menu-item>
+        Pagination
+      </k-menu-item>
+    </k-menu>
+    <div style="height: 20px;"></div>
+    <k-menu>
+      <k-menu-item
+        eventType="click"
+        :active="true">
+        <i class="fa fa-home" style="margin-right: 6px;font-size:14px"></i>Home
+        <k-menu-submenu>
+          <k-menu-submenu-group
+            title="Group-1">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+          <k-menu-submenu-group
+            title="Group-2">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+        </k-menu-submenu>
+      </k-menu-item>
+      <k-menu-item
+        eventType="click">
+        <i class="fa fa-home" style="margin-right: 6px;font-size:14px"></i>Table
+        <k-menu-submenu>
+          <k-menu-submenu-group
+            title="Group-1">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+          <k-menu-submenu-group
+            title="Group-2">
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Pwanxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              SKTxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+            <k-menu-submenu-item
+              @click="clickMenu">
+              Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </k-menu-submenu-item>
+          </k-menu-submenu-group>
+        </k-menu-submenu>
+      </k-menu-item>
+      <k-menu-item>
+        Pagination
+      </k-menu-item>
+    </k-menu>
+    <div style="height: 20px;"></div>
+    <div style="width: 360px;">
+      <k-menu
+        direction="y">
+        <k-menu-item
+          @click="clickMenu"
+          :active="true">
+          <i class="fa fa-heart" style="margin-right: 6px;"></i>Home
+          <k-menu-submenu>
+            <k-menu-submenu-group
+              title="Group-1">
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Pwanxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                SKTxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Impxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+            </k-menu-submenu-group>
+            <k-menu-submenu-group
+              title="Group-2">
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Pwanxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                SKTxxxxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+            </k-menu-submenu-group>
+          </k-menu-submenu>
+        </k-menu-item>
+        <k-menu-item
+          @click="clickMenu">
+          <i class="fa fa-heart" style="margin-right: 6px;"></i>Table
+          <k-menu-submenu>
+            <k-menu-submenu-group
+              title="Group-1">
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Pwanxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                SKTxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Impxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+            </k-menu-submenu-group>
+            <k-menu-submenu-group
+              title="Group-2">
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Pwanxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                SKTxxxxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+              <k-menu-submenu-item
+                @click="clickMenu">
+                Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+              </k-menu-submenu-item>
+            </k-menu-submenu-group>
+          </k-menu-submenu>
+        </k-menu-item>
+        <k-menu-item
+          @click="clickMenu">
+          Pagination
+        </k-menu-item>
+      </k-menu>
+      <div style="height: 20px;"></div>
+      <div style="width: 360px;">
+        <k-menu
+          direction="y">
+          <k-menu-item
+            eventType="click"
+            @click="clickMenu"
+            :active="true">
+            <i class="fa fa-heart" style="margin-right: 6px;"></i>Home
+            <k-menu-submenu>
+              <k-menu-submenu-group
+                title="Group-1">
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Pwanxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  SKTxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Impxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+              </k-menu-submenu-group>
+              <k-menu-submenu-group
+                title="Group-2">
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Pwanxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  SKTxxxxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+              </k-menu-submenu-group>
+            </k-menu-submenu>
+          </k-menu-item>
+          <k-menu-item
+            eventType="click"
+            @click="clickMenu">
+            <i class="fa fa-heart" style="margin-right: 6px;"></i>Table
+            <k-menu-submenu>
+              <k-menu-submenu-group
+                title="Group-1">
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Pwanxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  SKTxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Impxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+              </k-menu-submenu-group>
+              <k-menu-submenu-group
+                title="Group-2">
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Pwanxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  SKTxxxxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+                <k-menu-submenu-item
+                  @click="clickMenu">
+                  Impxxxxxxxxxxxxxxxxxxxxxxxxxx
+                </k-menu-submenu-item>
+              </k-menu-submenu-group>
+            </k-menu-submenu>
+          </k-menu-item>
+          <k-menu-item
+            @click="clickMenu">
+            Pagination
+          </k-menu-item>
+        </k-menu>
+      </div>
+    </div>
+    <div style="height: 20px;"></div>
     Tab
     <div style="height: 20px;"></div>
     <k-tab></k-tab>
@@ -338,10 +737,17 @@
         switchStat: false,
         sureLoading: false,
         modalWithCloseShow: false,
-        modalWithoutCloseShow: false
+        modalWithoutCloseShow: false,
+        badgeCount: 98
       }
     },
     methods: {
+      clickMenu() {
+        console.log('clickMenu');
+      },
+      addBadge() {
+        this.badgeCount += 1;
+      },
       callBack() {
         console.log('this is callBack');
       },
@@ -453,12 +859,11 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0px;
     background: #eee;
     /*overflow: hidden;*/
     padding: 20px 20px;
-    width: 1000px;
     overflow: auto;
     color: #888;
   }
