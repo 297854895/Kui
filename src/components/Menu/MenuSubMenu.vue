@@ -1,7 +1,7 @@
 <template>
   <transition name="k-submenu">
     <ul
-      @click.stop="handleClick"
+      @click="handleClick"
       class="k-menu-submenu"
       v-show="show">
       <slot></slot>
@@ -28,7 +28,16 @@
       })
     },
     methods: {
-      handleClick() {
+      handleClick(evt) {
+        const direction = this.$parent.$parent.$el.className.indexOf('y') > 0 ? 'y' : 'x';
+        const eventType = this.$parent.eventType;
+        if (direction === 'x') {
+          evt.stopPropagation();
+        }
+        if (eventType === 'hover') {
+          // todo active item
+          console.log('active item');
+        }
         this.show = false;
       }
     }

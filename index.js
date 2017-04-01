@@ -9738,7 +9738,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    handleClick: function handleClick() {
+    handleClick: function handleClick(evt) {
+      var direction = this.$parent.$parent.$el.className.indexOf('y') > 0 ? 'y' : 'x';
+      var eventType = this.$parent.eventType;
+      if (direction === 'x') {
+        evt.stopPropagation();
+      }
+      if (eventType === 'hover') {
+        console.log('active item');
+      }
       this.show = false;
     }
   }
@@ -9782,13 +9790,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     var parent = this.$parent.$el.className === 'k-menu-submenu-group' ? this.$parent.$parent.$parent.$parent : this.$parent.$parent.$parent;
+    this.parentRoot = parent;
     parent.$on('toggle-submenu-active-' + parent._uid, function () {
       _this.actived = false;
     });
   },
   data: function data() {
     return {
-      actived: this.active
+      actived: this.active,
+      parentRoot: null
     };
   },
 
@@ -9797,12 +9807,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this2 = this;
 
       if (this.actived) return;
-      var parent = this.$parent.$el.className === 'k-menu-submenu-group' ? this.$parent.$parent.$parent.$parent : this.$parent.$parent.$parent;
-      var direction = parent.$el.className.indexOf('y') > 0 ? 'y' : 'x';
-      if (direction === 'y') {
+      var direction = this.parentRoot.$el.className.indexOf('y') > 0 ? 'y' : 'x';
+      var parent = this.$parent.$el.className === 'k-menu-submenu-group' ? this.$parent.$parent : this.$parent;
+      if (direction === 'y' && parent.$parent.eventType === 'click') {
         evt.stopPropagation();
       }
-      parent.$emit('toggle-submenu-active-' + parent._uid);
+      this.parentRoot.$emit('toggle-submenu-active-' + this.parentRoot._uid);
       this.$emit('click');
       this.$nextTick(function () {
         _this2.actived = true;
@@ -11970,10 +11980,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "k-menu-submenu",
     on: {
-      "click": function($event) {
-        $event.stopPropagation();
-        _vm.handleClick($event)
-      }
+      "click": _vm.handleClick
     }
   }, [_vm._t("default")], 2)])
 },staticRenderFns: []}
